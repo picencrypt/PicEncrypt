@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>PicEncrypt</title>
+</head>
+<body>
+  <!--Citrus!-->
+  <style>
+    input{
+    background:#fff;
+    border:3px solid #000; 
+    height:1rem;
+    border-radius:5px;
+     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+     outline:none;
+    }
+    button{
+    background:rgb(255, 0, 0);
+    border:3px solid rgb(255, 0, 0);
+     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    
+    border-radius:8px;
+    height:2.5rem;
+    width:10rem;
+    font-size: 16px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+        outline:none;
+    }
+    button:hover{
+    background:rgb(85, 0, 0);
+    border:3px solid rgb(85, 0, 0);
+     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    
+    border-radius:8px;
+    height:2.5rem;
+    width:10rem;
+    font-size: 16px;
+    outline:none;
+    }
+    select{
+    background:#fc0;
+    border:3px solid #fc0;
+    border-radius:5px;
+    height:2rem;
+    width:10rem;
+     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+     outline:none;
+    }
+    </style>
+<style>
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #262626;
+        --textColor: #444;
+        --borderColor: #2c2c3a;
+        --primary: #24acf2;
+      }
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #fff;
+        --textColor: #aaa;
+        --borderColor: #2c2c3a;
+        --primary: #1bcfe7;
+      }
+    }
+
+    :root[data-theme="light"] {
+      --bg: #efefef;
+      --textColor: #aaa;
+      --borderColor: #2c2c3a;
+      --primary: #1bcfe7;
+    }
+
+    :root[data-theme="dark"] {
+      --bg: #262626;
+      --textColor: #444;
+      --borderColor: #2c2c3a;
+      --primary: #24acf2;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--textColor);
+    }
+
+    .flex {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      width: 100vw;
+    }
+  </style>
+  <script>
+    function changeMode() {
+      console.log("123");
+      const darkMode =
+        window.document.documentElement.getAttribute("data-theme") || "light";
+      console.log(darkMode);
+      if (darkMode == "light") {
+        window.document.documentElement.setAttribute("data-theme", "dark");
+      } else {
+        window.document.documentElement.setAttribute("data-theme", "light");
+      }
+    }
+  </script>
+
+<div style="padding:0 16px;text-align:center">
+
+        <summary></summary>
+        <div>
+        <span id="ipt4info"></span>&ensp;
+        <span style="display:none" class="iptwrap">
+         
+          <input id="ipt4" type="file" accept="image/*" />
+        </span>
+        </div>
+        <div style="padding-top:0.5rem">
+        <span></span>
+        <input style="display:none" type="text" id="textipt"/>
+        </div>
+         <div>&emsp;</div>
+   
+      
+       <span style="display:none" class="iptwrap">
+    
+    <input style="display:none" id="ipt1" type="file" multiple />
+    </span><span style="display:none" class="iptwrap">
+    
+    <input style="display:none" id="ipt2" type="file" multiple />
+    </span><span  style="display:none" class="iptwrap">
+    Extract
+    <input  style="display:none" id="ipt3" name="ipt3" type="file" accept="image/*" multiple />
+    </span>
+    <button style="color:#fff;" class="btn btn-theme" onclick="ipt3.click()">Extract</button>
+     
+        <div>&emsp;</div>
+        
+        <summary></summary>
+        <div>
+          <a href="#" target="_blank"></a><br />
+          <br />
+          <span style="color:#ff4d00">
+              <a href="#"></a><a href="#"></a>
+             </span>
+        </div>
+       
+        <div>&emsp;</div>
+     
+      
+     
+   
+    
+    </div>
+    <div id="display" style="padding:1rem"></div>
+    <style>
+      .iptwrap{
+        display:inline-block;
+        position:relative;
+        font-size:0.8rem;
+        width:64px;
+        height:24px;
+        line-height:24px;
+        margin-right:8px;
+        text-align:center;
+        outline:1px solid #999;
+      }
+      input[type="file"]{
+        position:absolute;
+        left:0;
+        top:0;
+        opacity:0;
+        width:64px;
+        height:24px;
+      }
+      input[type="text"]{
+        padding:2px 4px;
+        border:0;
+        outline:1px solid #999;
+      }
+      input:focus{
+        outline-offset:0;
+      }
+    </style>
+    <script>
+      //通用
+      (function() {
+        let table = [0x00000000,0x77073096,0xEE0E612C,0x990951BA,0x076DC419,0x706AF48F,0xE963A535,0x9E6495A3,0x0EDB8832,0x79DCB8A4,0xE0D5E91E,0x97D2D988,0x09B64C2B,0x7EB17CBD,0xE7B82D07,0x90BF1D91,0x1DB71064,0x6AB020F2,0xF3B97148,0x84BE41DE,0x1ADAD47D,0x6DDDE4EB,0xF4D4B551,0x83D385C7,0x136C9856,0x646BA8C0,0xFD62F97A,0x8A65C9EC,0x14015C4F,0x63066CD9,0xFA0F3D63,0x8D080DF5,0x3B6E20C8,0x4C69105E,0xD56041E4,0xA2677172,0x3C03E4D1,0x4B04D447,0xD20D85FD,0xA50AB56B,0x35B5A8FA,0x42B2986C,0xDBBBC9D6,0xACBCF940,0x32D86CE3,0x45DF5C75,0xDCD60DCF,0xABD13D59,0x26D930AC,0x51DE003A,0xC8D75180,0xBFD06116,0x21B4F4B5,0x56B3C423,0xCFBA9599,0xB8BDA50F,0x2802B89E,0x5F058808,0xC60CD9B2,0xB10BE924,0x2F6F7C87,0x58684C11,0xC1611DAB,0xB6662D3D,0x76DC4190,0x01DB7106,0x98D220BC,0xEFD5102A,0x71B18589,0x06B6B51F,0x9FBFE4A5,0xE8B8D433,0x7807C9A2,0x0F00F934,0x9609A88E,0xE10E9818,0x7F6A0DBB,0x086D3D2D,0x91646C97,0xE6635C01,0x6B6B51F4,0x1C6C6162,0x856530D8,0xF262004E,0x6C0695ED,0x1B01A57B,0x8208F4C1,0xF50FC457,0x65B0D9C6,0x12B7E950,0x8BBEB8EA,0xFCB9887C,0x62DD1DDF,0x15DA2D49,0x8CD37CF3,0xFBD44C65,0x4DB26158,0x3AB551CE,0xA3BC0074,0xD4BB30E2,0x4ADFA541,0x3DD895D7,0xA4D1C46D,0xD3D6F4FB,0x4369E96A,0x346ED9FC,0xAD678846,0xDA60B8D0,0x44042D73,0x33031DE5,0xAA0A4C5F,0xDD0D7CC9,0x5005713C,0x270241AA,0xBE0B1010,0xC90C2086,0x5768B525,0x206F85B3,0xB966D409,0xCE61E49F,0x5EDEF90E,0x29D9C998,0xB0D09822,0xC7D7A8B4,0x59B33D17,0x2EB40D81,0xB7BD5C3B,0xC0BA6CAD,0xEDB88320,0x9ABFB3B6,0x03B6E20C,0x74B1D29A,0xEAD54739,0x9DD277AF,0x04DB2615,0x73DC1683,0xE3630B12,0x94643B84,0x0D6D6A3E,0x7A6A5AA8,0xE40ECF0B,0x9309FF9D,0x0A00AE27,0x7D079EB1,0xF00F9344,0x8708A3D2,0x1E01F268,0x6906C2FE,0xF762575D,0x806567CB,0x196C3671,0x6E6B06E7,0xFED41B76,0x89D32BE0,0x10DA7A5A,0x67DD4ACC,0xF9B9DF6F,0x8EBEEFF9,0x17B7BE43,0x60B08ED5,0xD6D6A3E8,0xA1D1937E,0x38D8C2C4,0x4FDFF252,0xD1BB67F1,0xA6BC5767,0x3FB506DD,0x48B2364B,0xD80D2BDA,0xAF0A1B4C,0x36034AF6,0x41047A60,0xDF60EFC3,0xA867DF55,0x316E8EEF,0x4669BE79,0xCB61B38C,0xBC66831A,0x256FD2A0,0x5268E236,0xCC0C7795,0xBB0B4703,0x220216B9,0x5505262F,0xC5BA3BBE,0xB2BD0B28,0x2BB45A92,0x5CB36A04,0xC2D7FFA7,0xB5D0CF31,0x2CD99E8B,0x5BDEAE1D,0x9B64C2B0,0xEC63F226,0x756AA39C,0x026D930A,0x9C0906A9,0xEB0E363F,0x72076785,0x05005713,0x95BF4A82,0xE2B87A14,0x7BB12BAE,0x0CB61B38,0x92D28E9B,0xE5D5BE0D,0x7CDCEFB7,0x0BDBDF21,0x86D3D2D4,0xF1D4E242,0x68DDB3F8,0x1FDA836E,0x81BE16CD,0xF6B9265B,0x6FB077E1,0x18B74777,0x88085AE6,0xFF0F6A70,0x66063BCA,0x11010B5C,0x8F659EFF,0xF862AE69,0x616BFFD3,0x166CCF45,0xA00AE278,0xD70DD2EE,0x4E048354,0x3903B3C2,0xA7672661,0xD06016F7,0x4969474D,0x3E6E77DB,0xAED16A4A,0xD9D65ADC,0x40DF0B66,0x37D83BF0,0xA9BCAE53,0xDEBB9EC5,0x47B2CF7F,0x30B5FFE9,0xBDBDF21C,0xCABAC28A,0x53B39330,0x24B4A3A6,0xBAD03605,0xCDD70693,0x54DE5729,0x23D967BF,0xB3667A2E,0xC4614AB8,0x5D681B02,0x2A6F2B94,0xB40BBE37,0xC30C8EA1,0x5A05DF1B,0x2D02EF8D];
+        let crc32 = window.crc32 = (arr,crc)=>{
+          crc = crc || 0;
+          let n = 0;
+          let x = 0;
+          crc ^= -1;
+          for(let i = 0 ; i < arr.length; i++ ) {
+            n = ( crc ^ arr[i] ) & 0xFF;
+            x = table[n];
+            crc = ( crc >>> 8 ) ^ x;
+          }
+          crc ^= -1;
+          return crc
+        };
+        return crc32
+      })()
+      function crc32arr(arr){
+        return arr.reduce((a,b)=>crc32(b,a),0)
+      }
+      function stringtoarray(str,ifzero){
+        let arr=new Uint8Array(str.length+(ifzero?1:0))
+        for(let i=0;i<str.length;i++){
+          arr[i]=str.charCodeAt(i)
+        }
+        return arr
+      }
+      function arraytostring(arr){
+        return Array.from(arr).map(x=>String.fromCharCode(x)).join("")
+      }
+      function concatuint8array(arrays){
+        let length=arrays.reduce((a,b)=>a+b.length,0)
+        let result=new Uint8Array(length)
+        let start=0
+        arrays.map(x=>{
+          result.set(x,start)
+          start+=x.length
+        })
+        return result
+      }
+      function utf8Encode(string){
+        var utftext = "";
+        for (var n = 0; n < string.length; n++) {
+          var c = string.charCodeAt(n);
+          if (c < 128) {
+            utftext += String.fromCharCode(c);
+          } else if ((c > 127) && (c < 2048)) {
+            utftext += String.fromCharCode((c >> 6) | 192);
+            utftext += String.fromCharCode((c & 63) | 128);
+          } else {
+            utftext += String.fromCharCode((c >> 12) | 224);
+            utftext += String.fromCharCode(((c >> 6) & 63) | 128);
+            utftext += String.fromCharCode((c & 63) | 128);
+          }
+        }
+        return utftext;
+      }
+      function utf8Decode(inputStr){
+        var outputStr = "";
+        var code1, code2, code3, code4;
+        for (var i = 0; i < inputStr.length; i++) {
+          code1 = inputStr.charCodeAt(i);
+          if (code1 < 128) {
+            outputStr += String.fromCharCode(code1);
+          } else if (code1 < 224) {
+            code2 = inputStr.charCodeAt(++i);
+            outputStr += String.fromCharCode(((code1 & 31) << 6) | (code2 & 63));
+          } else if (code1 < 240) {
+            code2 = inputStr.charCodeAt(++i);
+            code3 = inputStr.charCodeAt(++i);
+            outputStr += String.fromCharCode(((code1 & 15) << 12) | ((code2 & 63) << 6) | (code3 & 63));
+          } else {
+            code2 = inputStr.charCodeAt(++i);
+            code3 = inputStr.charCodeAt(++i);
+            code4 = inputStr.charCodeAt(++i);
+            outputStr += String.fromCharCode(((code1 & 7) << 18) | ((code2 & 63) << 12) | ((code3 & 63) << 6) | (code2 & 63));
+          }
+        }
+        return outputStr;
+      }
+      function dataURLtoArray(dataurl){
+        let arr  = dataurl.split(','),
+           _arr  = arr[1],
+           bstr  = atob(_arr),
+           n     = bstr.length,
+           u8arr = new Uint8Array(n)
+        while (n--) {
+          u8arr[n] = bstr.charCodeAt(n)
+        }
+        return u8arr
+      }
+      function getint32(arr,start){//from Uint8Array
+        start=start||0
+        return (arr[start]<<24)|(arr[start+1]<<16)|(arr[start+2]<<8)|arr[start+3]
+      }
+      function createint32(num){
+        return[num>>>24,num>>>16&0xff,num>>>8&0xff,num&0xff]
+      }
+      function setint32(arr,num,start){
+        start=start||0
+        arr[start]=num>>>24
+        arr[start+1]=num>>>16&0xff
+        arr[start+2]=num>>>8&0xff
+        arr[start+3]=num&0xff
+      }
+    </script>
+    <script>
+      let code=getint32(stringtoarray("tpWj"))
+      /*
+      let codeinput=document.getElementById("ident")
+      codeinput.onchange=()=>{
+        code=getint32(stringtoarray(code.value))
+      }
+      */
+      function extract(arr,code){
+        //png文件magic number
+        //89504e470d0a1a0a
+        if(getint32(arr,0)!=(0x89504e47|0)){
+          return false
+        }
+        code=code|0
+        let i=8
+        let result=[]
+        while(i<arr.length-12){
+          let length=getint32(arr,i)
+          //一般情况下length不小于0
+          if(getint32(arr,i+4)==code){
+            result.push(arr.slice(i+8,i+8+length))
+          }
+          i+=length+12
+        }
+        return result
+      }
+      function unwraptofile(arr){
+        let i=0
+        while(arr[i]!=0){
+          i++
+        }
+        let meta=JSON.parse(arraytostring(arr.slice(0,i)))
+        return new File([arr.slice(i+1).buffer],utf8Decode(meta.name),{type:meta.mime})
+      }
+      function decode(file,code,returnfunc){
+        let reader=new FileReader()
+        reader.readAsArrayBuffer(file)
+        reader.onload=e=>{
+          let extracted=extract(new Uint8Array(e.target.result),code)
+          if(!(extracted&&extracted.length>0)){
+            returnfunc(false)
+            return
+          }
+          let result=[]
+          extracted.map(x=>{
+            try{
+              result.push(unwraptofile(x))
+            }catch(e){}
+          })
+          if(result.length>0){
+            returnfunc(result)
+          }else{
+            returnfunc(false)
+          }
+        }
+      }
+      
+      function wrap(file,code,returnfunc){
+        let reader=new FileReader(file)
+        reader.readAsArrayBuffer(file)
+        reader.onload=e=>{
+          let arr=new Uint8Array(e.target.result)
+          let meta=stringtoarray(JSON.stringify({
+            name:utf8Encode(file.name),
+            mime:file.type
+          }),true)
+          let ident=createint32(code)
+          let lengtharr=createint32(meta.length+arr.length)
+          let crcarr=createint32(crc32arr([ident,meta,arr]))
+          let result=concatuint8array([lengtharr,ident,meta,arr,crcarr])
+          returnfunc(result)
+        }
+      }
+      function assembletoblob(pngarr,filearr){
+        let l=pngarr.length
+        let arr=concatuint8array([pngarr.slice(0,l-12)].concat(filearr).concat([pngarr.slice(l-12)]))
+        return new Blob([arr.buffer],{type:"image/png"})
+      }
+      function randompngarr2(text){
+        let cvs=document.createElement("canvas")
+        let ctx=cvs.getContext("2d")
+        cvs.width=cvs.height=400
+        ctx.fillStyle="#ffffff"
+        ctx.fillRect(0,0,400,400)
+        ctx.setTransform(1,0,0,1,50,50)
+        
+        let theta=Math.random()*2*Math.PI
+        ctx.fillStyle="rgb("+[Math.cos(theta),Math.cos(theta-Math.PI*2/3),Math.cos(theta+Math.PI*2/3)].map(x=>x*(Math.random()+1)*64+96+Math.random()*64)+")"
+        
+        ctx.shadowColor="rgba(0,0,0,0.25)"
+        ctx.shadowOffsetX=10
+        ctx.shadowOffsetY=10
+        ctx.shadowBlur=15
+        
+        ctx.beginPath()
+        ctx.arc(150,150,175,0,Math.PI*2)
+        ctx.closePath()
+        ctx.fill()
+        
+        ctx.shadowColor="rgba(0,0,0,0)"
+        ctx.fillStyle=ctx.strokeStyle="#fff"
+        
+        ctx.lineJoin="round"
+        ctx.lineWidth=16
+        ctx.beginPath()
+        ctx.moveTo(110,50)
+        ctx.lineTo(225,50)
+        ctx.lineTo(225,250)
+        ctx.lineTo(75,250)
+        ctx.lineTo(75,85)
+        ctx.closePath()
+        ctx.stroke()
+        ctx.fillRect(105,110,90,16)
+        ctx.fillRect(105,155,90,16)
+        ctx.fillRect(105,200,90,16)
+        
+        ctx.setTransform(1,0,0,1,0,0)
+        
+        ctx.fillStyle="#000"
+        ctx.strokeStyle="#fff"
+        ctx.lineWidth=4
+        ctx.font="20px sans-serif"
+        ctx.textBaseline="middle"
+        ctx.textAlign="right"
+        ctx.strokeText(text,395,15)
+        ctx.fillText(text,395,15)
+        
+        return dataURLtoArray(cvs.toDataURL("image/png"))
+      }
+      function randompngarr(text){
+        let cvs=document.createElement("canvas")
+        cvs.width=cvs.height=300
+        let ctx=cvs.getContext("2d")
+        let theta=Math.random()*2*Math.PI
+        ctx.fillStyle="rgb("+[Math.cos(theta),Math.cos(theta-Math.PI*2/3),Math.cos(theta+Math.PI*2/3)].map(x=>x*(Math.random()+1)*64+96+Math.random()*64)+")"
+        ctx.fillRect(0,0,300,300)
+        ctx.fillStyle=ctx.strokeStyle="#fff"
+        ctx.lineJoin="round"
+        ctx.lineWidth=16
+        ctx.beginPath()
+        ctx.moveTo(110,50)
+        ctx.lineTo(225,50)
+        ctx.lineTo(225,250)
+        ctx.lineTo(75,250)
+        ctx.lineTo(75,85)
+        ctx.closePath()
+        ctx.stroke()
+        ctx.fillRect(105,110,90,16)
+        ctx.fillRect(105,155,90,16)
+        ctx.fillRect(105,200,90,16)
+        
+        ctx.fillStyle="#000"
+        ctx.strokeStyle="#fff"
+        ctx.lineWidth=4
+        ctx.font="20px sans-serif"
+        ctx.textBaseline="middle"
+        ctx.textAlign="right"
+        ctx.strokeText(text,295,15)
+        ctx.fillText(text,295,15)
+        
+        return dataURLtoArray(cvs.toDataURL("image/png"))
+      }
+      
+    </script>
+    <script>
+      let def=true
+      let custompic
+        let ipt4=document.getElementById("ipt4")
+        ipt4.onchange=()=>{
+          if(ipt4.files.length==0){
+            def=true
+            document.getElementById("ipt4info").innerText="Default"
+            return
+          }
+          let src=URL.createObjectURL(ipt4.files[0])
+          let img=new Image()
+          img.src=src
+          img.onload=()=>{
+            URL.revokeObjectURL(src)
+            let cvs=document.createElement("canvas")
+            let ctx=cvs.getContext("2d")
+            let w=img.width
+            let h=img.height
+            if(w*h>100000){
+              let scale=Math.sqrt(w*h/100000)
+              w=Math.round(w/scale)
+              h=Math.round(h/scale)
+            }
+            cvs.width=w
+            cvs.height=h
+            ctx.drawImage(img,0,0,w,h)
+            let img2=new Image()
+            img2.src=cvs.toDataURL("image/png")
+            img2.onload=()=>{
+              custompic=img2
+              def=false
+              document.getElementById("ipt4info").innerText="上传成功✓"
+            }
+          }
+        }
+      function addtext(img,text){
+        if(!text){
+          return dataURLtoArray(img.src)
+        }
+        let cvs=document.createElement("canvas")
+        let ctx=cvs.getContext("2d")
+        let w=img.width
+        let h=img.height
+        cvs.width=w
+        cvs.height=h
+        ctx.drawImage(img,0,0,w,h)
+        
+        ctx.fillStyle="#000"
+        ctx.strokeStyle="#fff"
+        ctx.lineWidth=4
+        ctx.font="20px sans-serif"
+        ctx.textBaseline="middle"
+        ctx.textAlign="right"
+        ctx.strokeText(text,w-5,15)
+        ctx.fillText(text,w-5,15)
+        
+        return dataURLtoArray(cvs.toDataURL("image/png"))
+      }
+      function genpngarr(big,text){
+        text=text||document.getElementById("textipt").value
+        if(def){
+          if(big){
+            return randompngarr2(text)
+          }else{
+            return randompngarr(text)
+          }
+        }else{
+          return custompic["_text_"+text]||(custompic["_text_"+text]=addtext(custompic,text))
+        }
+      }
+    </script>
+    <script>
+      let srclist=[]
+      let display=document.getElementById("display")
+      function clear(){
+        display.innerHTML=""
+        srclist.map(x=>URL.revokeObjectURL(x))
+        srclist=[]
+      }
+      function createdisplay(b){
+        let src=URL.createObjectURL(b)
+        srclist.push(b)
+        
+        let div=document.createElement("div")
+        div.style.paddingTop="0.5rem"
+        
+        let div2=document.createElement("div")
+        div2.style.wordBreak="break-all"
+        div.appendChild(div2)
+        
+        let a=document.createElement("a")
+        a.innerText="Save"
+        a.href=src
+        a.download=b.name
+        div2.appendChild(a)
+        
+        let span=document.createElement("span")
+        span.innerText=b.name
+        span.innerHTML="&emsp;"+span.innerHTML
+        div2.appendChild(span)
+        
+        if(b.type.indexOf("image")>-1){
+          let img=document.createElement("img")
+          img.style.maxWidth="100%"
+          img.src=src
+          div.appendChild(img)
+        }
+          if(b.type.indexOf("video")>-1){
+          let img=document.createElement("video")
+          img.controls=true
+          img.style.maxWidth="100%"
+          img.src=src
+          div.appendChild(img)
+        }
+        
+        if(b.type.indexOf("audio")>-1){
+          let img=document.createElement("audio")
+          img.controls=true
+          img.style.maxWidth="100%"
+          img.src=src
+          div.appendChild(img)
+        }
+        
+        return div
+      }
+      
+      
+        let ipt1=document.getElementById("ipt1")
+        ipt1.onchange=()=>{
+          clear()
+          let j=ipt1.files.length
+          let finish=[]
+          Array.from(ipt1.files).map((f,x)=>{
+            wrap(f,code,r=>{
+              finish[x]=r
+              if(--j==0){
+                let src=URL.createObjectURL(assembletoblob(genpngarr(true),finish))
+                srclist.push(src)
+                let img=document.createElement("img")
+                img.src=src
+                img.style.maxWidth="100%"
+                display.appendChild(img)
+              }
+            })
+          })
+        }
+
+
+        let ipt2=document.getElementById("ipt2")
+        ipt2.onchange=()=>{
+          clear()
+          Array.from(ipt2.files).map(f=>{
+            wrap(f,code,r=>{
+              let src=URL.createObjectURL(assembletoblob(genpngarr(false),[r]))
+              srclist.push(src)
+              let img=document.createElement("img")
+              img.src=src
+              img.style.width="100px"
+              img.style.margin="4px"
+              display.appendChild(img)
+            })
+          })
+        }
+      
+      
+        let ipt3=document.getElementById("ipt3")
+        ipt3.onchange=()=>{
+          clear()
+          let div=document.createElement("div")
+          display.appendChild(div)
+          let div2=document.createElement("div")
+          display.appendChild(div2)
+          let count=0
+          Array.from(ipt3.files).map(f=>{
+            decode(f,code,r=>{
+              if(r){
+                r.map(x=>{
+                  display.appendChild(createdisplay(x))
+                })
+              }else{
+                div.innerText="Invalid picture.("+(++count)+")"
+                let img=document.createElement("img")
+                img.style.maxWidth="100px"
+                img.style.maxHeight="100px"
+                let src=URL.createObjectURL(f)
+                srclist.push(src)
+                img.src=src
+                div2.appendChild(img)
+                div2.style.paddingBottom="0.5rem"
+                div2.style.borderBottom="1px solid #ccc"
+              }
+            })
+          })
+        }
+    </script>
+  </body>
+</html>

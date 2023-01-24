@@ -1,0 +1,51 @@
+{
+  "name": "picencrypt",
+  "version": "1.2.1",
+  "description": "picture encrypt",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.4",
+    "@electron-forge/maker-deb": "^6.0.4",
+    "@electron-forge/maker-rpm": "^6.0.4",
+    "@electron-forge/maker-squirrel": "^6.0.4",
+    "@electron-forge/maker-zip": "^6.0.4",
+    "electron": "^19.0.0"
+  },
+  "author": "PicEncrypt",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
+    "git": "^0.1.5"
+  },
+  "build": {
+    "productName": "picencrypt",
+    "appId": "7m3v8fffc23",
+    "mac": {
+      "icon": "./icon/favicon.ico"
+    },
+    "win": {
+      "icon": "./icon/favicon.png"
+    },
+    "linux": {
+      "icon": "./icon/favicon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "guid": "picencrypt",
+      "perMachine": true,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "./favicon.ico",
+      "uninstallerIcon": "./favicon.ico",
+      "installerHeaderIcon": "./favicon.ico",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "PicEncrypt"
+    }
+  }
+}

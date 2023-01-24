@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>PicEncrypt</title>
+</head>
+<body>
+  <!--Citrus!-->
+  <style>
+    input{
+    background:#fff;
+    border:3px solid #000; 
+    height:1rem;
+    border-radius:5px;
+     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+     outline:none;
+    }
+    button{
+    background:rgb(255, 0, 0);
+    border:3px solid rgb(255, 0, 0);
+     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    
+    border-radius:8px;
+    height:2.5rem;
+    width:10rem;
+    font-size: 16px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+        outline:none;
+    }
+    button:hover{
+    background:rgb(85, 0, 0);
+    border:3px solid rgb(85, 0, 0);
+     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    
+    border-radius:8px;
+    height:2.5rem;
+    width:10rem;
+    font-size: 16px;
+    outline:none;
+    }
+    select{
+    background:#fc0;
+    border:3px solid #fc0;
+    border-radius:5px;
+    height:2rem;
+    width:10rem;
+     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+     outline:none;
+    }
+    </style>
+<style>
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #262626;
+        --textColor: #444;
+        --borderColor: #2c2c3a;
+        --primary: #24acf2;
+      }
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #fff;
+        --textColor: #aaa;
+        --borderColor: #2c2c3a;
+        --primary: #1bcfe7;
+      }
+    }
+
+    :root[data-theme="light"] {
+      --bg: #efefef;
+      --textColor: #aaa;
+      --borderColor: #2c2c3a;
+      --primary: #1bcfe7;
+    }
+
+    :root[data-theme="dark"] {
+      --bg: #262626;
+      --textColor: #444;
+      --borderColor: #2c2c3a;
+      --primary: #24acf2;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--textColor);
+    }
+
+    .flex {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      width: 100vw;
+    }
+  </style>
+  <script>
+    function changeMode() {
+      console.log("123");
+      const darkMode =
+        window.document.documentElement.getAttribute("data-theme") || "light";
+      console.log(darkMode);
+      if (darkMode == "light") {
+        window.document.documentElement.setAttribute("data-theme", "dark");
+      } else {
+        window.document.documentElement.setAttribute("data-theme", "light");
+      }
+    }
+  </script>
+
+<div style="padding:0 16px;text-align:center">
+
+
+
+   <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+   <!-- Created with Inkscape (http://www.inkscape.org/) -->
+   
+   <svg
+      width="100%"
+      height="8.5%"
+      viewBox="0 0 264.58333 22.489583"
+      version="1.1"
+      id="svg5"
+      inkscape:version="1.1 (c4e8f9e, 2021-05-24)"
+      sodipodi:docname="head.svg"
+      xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+      xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:svg="http://www.w3.org/2000/svg">
+     <sodipodi:namedview
+        id="namedview7"
+        pagecolor="#ffffff"
+        bordercolor="#000000"
+        borderopacity="0.25"
+        inkscape:pageshadow="2"
+        inkscape:pageopacity="0.0"
+        inkscape:pagecheckerboard="0"
+        inkscape:document-units="px"
+        showgrid="true"
+        units="px"
+        width="1000px"
+        inkscape:zoom="2"
+        inkscape:cx="489.5"
+        inkscape:cy="138.5"
+        inkscape:window-width="2160"
+        inkscape:window-height="1380"
+        inkscape:window-x="0"
+        inkscape:window-y="0"
+        inkscape:window-maximized="1"
+        inkscape:current-layer="layer1"
+        inkscape:snap-page="true"
+        inkscape:snap-text-baseline="true"
+        inkscape:snap-center="true"
+        inkscape:snap-object-midpoints="true"
+        inkscape:snap-midpoints="true"
+        inkscape:snap-smooth-nodes="true"
+        inkscape:snap-intersection-paths="true"
+        inkscape:object-paths="true"
+        inkscape:snap-grids="true"
+        height="200px">
+       <inkscape:grid
+          type="xygrid"
+          id="grid1605" />
+     </sodipodi:namedview>
+     <defs
+        id="defs2">
+       <linearGradient
+          inkscape:collect="always"
+          id="linearGradient4847">
+         <stop
+            style="stop-color:#ffcc00;stop-opacity:1;"
+            offset="0"
+            id="stop4843" />
+         <stop
+            style="stop-color:#ffcc00;stop-opacity:0;"
+            offset="1"
+            id="stop4845" />
+       </linearGradient>
+       <linearGradient
+          inkscape:collect="always"
+          id="linearGradient4612">
+         <stop
+            style="stop-color:#ffaaaa;stop-opacity:1;"
+            offset="0"
+            id="stop4608" />
+         <stop
+            style="stop-color:#ffaaaa;stop-opacity:0;"
+            offset="1"
+            id="stop4610" />
+       </linearGradient>
+       <linearGradient
+          inkscape:collect="always"
+          id="linearGradient33031">
+         <stop
+            style="stop-color:#fff6d5;stop-opacity:1;"
+            offset="0"
+            id="stop33027" />
+         <stop
+            style="stop-color:#fff6d5;stop-opacity:0;"
+            offset="1"
+            id="stop33029" />
+       </linearGradient>
+       <rect
+          x="340"
+          y="0"
+          width="560"
+          height="230"
+          id="rect24141" />
+       <rect
+          x="35"
+          y="35"
+          width="15"
+          height="15"
+          id="rect5421" />
+       <rect
+          x="68"
+          y="65"
+          width="81"
+          height="54"
+          id="rect76447" />
+       <rect
+          x="81"
+          y="65"
+          width="83"
+          height="56"
+          id="rect67531" />
+       <rect
+          x="71"
+          y="77"
+          width="77"
+          height="26.000002"
+          id="rect59825" />
+       <rect
+          x="89"
+          y="72"
+          width="65.447403"
+          height="81.864227"
+          id="rect42071" />
+       <rect
+          x="100"
+          y="80"
+          width="1000"
+          height="280"
+          id="rect29548" />
+       <rect
+          x="68"
+          y="65"
+          width="81"
+          height="54"
+          id="rect97624" />
+       <rect
+          x="68"
+          y="65"
+          width="81"
+          height="54"
+          id="rect112190" />
+       <rect
+          x="35"
+          y="35"
+          width="15"
+          height="15"
+          id="rect29867" />
+       <linearGradient
+          inkscape:collect="always"
+          xlink:href="#linearGradient33031"
+          id="linearGradient33033"
+          x1="40.178005"
+          y1="42.661999"
+          x2="45.374008"
+          y2="42.661999"
+          gradientUnits="userSpaceOnUse" />
+       <linearGradient
+          inkscape:collect="always"
+          xlink:href="#linearGradient4612"
+          id="linearGradient4614"
+          x1="5.2916665"
+          y1="-84.666664"
+          x2="264.58298"
+          y2="11.244792"
+          gradientUnits="userSpaceOnUse" />
+       <linearGradient
+          inkscape:collect="always"
+          xlink:href="#linearGradient4847"
+          id="linearGradient4849"
+          x1="264.58334"
+          y1="13.229166"
+          x2="15.875"
+          y2="74.083336"
+          gradientUnits="userSpaceOnUse" />
+     </defs>
+     <g
+        inkscape:label="图层 1"
+        inkscape:groupmode="layer"
+        id="layer1">
+       <text
+          xml:space="preserve"
+          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.74986px;font-family:'Arno Pro';-inkscape-font-specification:'Arno Pro';fill:#ffffff;stroke:none;stroke-width:0.145821"
+          x="49.57922"
+          y="9.8448877"
+          id="text101100"
+          transform="scale(1.8144362,0.55113539)"><tspan
+            sodipodi:role="line"
+            id="tspan101098"
+            style="stroke-width:0.145821"
+            x="49.57922"
+            y="9.8448877"> </tspan></text>
+       <rect
+          style="fill:url(#linearGradient4614);fill-opacity:1;stroke:none;stroke-width:1.66969;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+          id="rect2207"
+          width="264.58298"
+          height="22.489584"
+          x="0"
+          y="-3.8857806e-15" />
+       <rect
+          style="fill:url(#linearGradient4849);fill-opacity:1;stroke:none;stroke-width:1.66969;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+          id="rect4823"
+          width="264.58298"
+          height="22.489584"
+          x="0"
+          y="-3.8857806e-15" />
+       <text
+          xml:space="preserve"
+          transform="matrix(0.61132917,0,0,0.61132917,-247.05172,5.8565366)"
+          id="text24139"
+          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;white-space:pre;shape-inside:url(#rect24141);fill:#000000;stroke:none;stroke-width:11.3386"
+          x="29.567934"
+          y="0"><tspan
+            x="582"
+            y="12.06"
+            id="tspan970">PicEncrypt</tspan></text>
+     </g>
+   </svg>
+<br />
+<a href="index.html" class="pathlink">PicEncrypt</a> <nobr style="color:#888;font-size:36px;">&nbsp;&gt;&nbsp;PicFolder</nobr>
+<style>
+  .pathlink {color:#888;font-size:36px;text-decoration:none;}
+</style>
+      <br />
+  <style type="text/css">
+  *{box-sizing:border-box;}
+  body{margin:0;}
+  button{padding:1px 3px;}
+  details{display:block;}
+  img,audio,video{border:1px solid #7F7F7F;display:inline-block;max-width:100%;}
+  label{display:inline-block;}
+  summary h3,summary h4{display:inline;}
+  table{border-collapse:collapse;}
+  table tr th,table tr td{border:1px solid #7f7f7f;padding:2px 5px;}
+  ul{margin:0;padding-left:25px;}
+  .breakWord{overflow-wrap:break-word;}
+  .container{padding:10px 15px;}
+  .declare{color:#ff3f3f;font-weight:bold;}
+  .headerBar{background-color:#dfffff;height:45px;left:0;position:fixed;top:0;width:100%;}
+  .headerBar button{height:25px;}
+  .mLeftM{margin-left:15px;}
+  .mRightXS{margin-right:5px;}
+  .mTopS{margin-top:8px;}
+  .mainPanel{margin-top:30px;}
+  .noWrap{white-space:nowrap;word-break:keep-all;}
+  .remark{color:#3f3f3f;font-family:'新宋体';font-size:0.8rem;}
+  </style>
+  <script type="text/javascript">
+  const UT=(()=>{
+    const Excp=function(msg,cause){
+      this.msg=msg;
+      this.cause=cause;
+    };
+    const preProm=exec=>()=>new Promise(exec);
+    const serial=prePms=>async()=>{
+      let ret=[];
+      for(prePm of prePms){
+        ret.push(await prePm());
+      }
+      return ret;
+    };
+    const parallel=prePms=>()=>Promise.all(prePms.map(prePm=>prePm()));
+    const fcc=String.fromCharCode;
+    const utf8En=text=>{
+      let code='';
+      for(let i=0;i<text.length;i++){
+        const c=text.charCodeAt(i);
+        code+=c<0x80?fcc(c):c<0x800?(fcc((c>>>6)|0xC0)+fcc(c&0x3F|0x80)):(fcc((c>>>12)|0xE0)+fcc((c>>>6)&0x3F|0x80)+fcc(c&0x3F|0x80));
+      }
+      return code;
+    };
+    const utf8De=code=>{
+      let text='';
+      for(let i=0;i<code.length;i++){
+        const c=code.charCodeAt(i);
+        text+=c<0x80?fcc(c):c<0xE0?fcc(((c&0x1F)<<6)|(code.charCodeAt(++i)&0x3F)):fcc(((c&0x0F)<<12)|((code.charCodeAt(++i)&0x3F)<<6)|(code.charCodeAt(++i)&0x3F));
+      }
+      return text;
+    };
+    const url2Blob=url=>{
+      const frag=url.split(',');
+      const mime=frag[0].match(/:(.*?);/)[1];
+      const bytes=atob(frag[1]);
+      let l=bytes.length;
+      const arr=new Uint8Array(l);
+      while(l--){
+        arr[l]=bytes.charCodeAt(l);
+      }
+      return new Blob([arr.buffer],{type:mime});
+    };
+    const loadFile=(load,emsg)=>preProm((ok,err)=>{
+      try{
+        const r=new FileReader();
+        r.onloadend=e=>{
+          if(e.target.error){
+            err(new Excp(emsg,e.target.error));
+          }else{
+            ok(e.target.result);
+          }
+        };
+        load(r);
+      }catch(t){
+        err(new Excp(emsg,t));
+      }
+    });
+    const loadAsUrl=(file,emsg)=>loadFile(r=>r.readAsDataURL(file),emsg);
+    const loadAsBuff=(file,emsg)=>loadFile(r=>r.readAsArrayBuffer(file),emsg);
+    return {
+      Excp:Excp,
+      preProm:preProm,
+      serial:serial,
+      parallel:parallel,
+      fcc:fcc,
+      utf8En:utf8En,
+      utf8De:utf8De,
+      url2Blob:url2Blob,
+      loadFile:loadFile,
+      loadAsUrl:loadAsUrl,
+      loadAsBuff:loadAsBuff
+    };
+  })();
+  
+  const CF=(()=>{
+    const F0=0,F1=3,FLV=3,IDLI=UT.fcc(1),IEND=UT.fcc(0);
+    const ERR={
+      CLOAK_FAIL:'CLOAK_FAIL',
+      DECLOAK_FAIL:'DECLOAK_FAIL',
+      DECLOAK_CROSS_ORIGIN_ERR:'DECLOAK_CROSS_ORIGIN_ERR',
+      INFILE_INVLD:'INFILE_INVLD'
+    };
+    const genAux=lv=>({
+      range:1<<lv,
+      half:(1<<lv)>>>1,
+      maskH:-1<<lv,
+      maskL:~(-1<<lv)
+    });
+    const abut=(b,t,aux)=>{
+      if(aux.range<=2){
+        return b&aux.maskH|t;
+      }
+      const bL=b&aux.maskL;
+      return (b<aux.half||b>=0xFF-aux.half)?(b&aux.maskH|t):(t-bL>aux.half)?((b&aux.maskH|t)-aux.range):(bL-t>=aux.half)?((b&aux.maskH|t)+aux.range):(b&aux.maskH|t);
+    };
+    const Pkg=function(data,lv,clk){
+      this.data=data;
+      this.lv=lv;
+      this.buff=0;
+      this.bits=0;
+      this.idx=4;
+      this.aux=genAux(lv);
+      this.clk=clk;
+    };
+    Pkg.prototype.implantSeg=function(next){
+      if(!this.clk){
+        return;
+      }
+      let i=0;
+      while(this.idx<this.data.length){
+        const b=next(i++);
+        if(b<0){
+          break;
+        }
+        this.buff=(this.buff<<8)|b;
+        this.bits+=8;
+        this.flush();
+      }
+    };
+    Pkg.prototype.flush=function(end){
+      if(!this.clk){
+        return;
+      }
+      while(this.idx<this.data.length&&this.bits>=this.lv){
+        this.data[this.idx]=abut(this.data[this.idx],(this.buff>>>(this.bits-this.lv))&this.aux.maskL,this.aux);
+        this.bits-=this.lv;
+        this.idx++;
+        if((this.idx&3)===3){
+          this.idx++;
+        }
+      }
+      if(end&&this.idx<this.data.length&&this.bits>0){
+        this.data[this.idx]=abut(this.data[this.idx],(this.buff<<(this.lv-this.bits))&this.aux.maskL,this.aux);
+        this.idx++;
+      }
+    };
+    Pkg.prototype.extractBytes=function(onByte){
+      if(this.clk){
+        return;
+      }
+      let i=0,goon=true;
+      while(this.idx<this.data.length&&goon){
+        this.buff=(this.buff<<this.lv)|(this.data[this.idx]&this.aux.maskL);
+        this.bits+=this.lv;
+        this.idx++;
+        if((this.idx&3)===3){
+          this.idx++;
+        }
+        if(this.bits>=8){
+          goon=onByte((this.buff>>>(this.bits-8))&0xFF)!==false;
+          this.bits-=8;
+        }
+      }
+    };
+    const adjMinSize=(imgW,imgH,minW,minH)=>{
+      const h=Math.round(minW*imgH/imgW);
+      if(h<minH){
+        minW=Math.max(minW,Math.round(minH*imgW/imgH));
+      }else{
+        minH=h;
+      }
+      return [minW,minH];
+    };
+    const calcSizeLv=(bits,maxLv,imgW,imgH,minW,minH,shrink)=>{
+      const minSize=adjMinSize(imgW,imgH,minW,minH);
+      minW=minSize[0];
+      minH=minSize[1];
+      const noShk=shrink!=='TEMPERATE'&&shrink!=='EXTREME';
+      if(noShk){
+        minW=Math.max(imgW,minW);
+        minH=Math.max(imgH,minH);
+      }
+      const imgPx=imgW*imgH,minPx=minW*minH;
+      let lv=0,needPx=0;
+      do{
+        lv++;
+        needPx=Math.ceil(bits/(lv*3))+1;
+      }while(lv<maxLv&&needPx>minPx&&(needPx>imgPx||shrink==='EXTREME'));
+      let w=imgW,h=imgH;
+      if(needPx<=minPx){
+        w=minW;
+        h=minH;
+      }else if(needPx>imgPx||(!noShk&&needPx<imgPx)){
+        const scale=Math.sqrt(needPx/imgPx);
+        w=Math.ceil(scale*w);
+        h=Math.ceil(scale*h);
+      }
+      return [w,h,lv];
+    };
+    const implant=(outImg,inData,info,lv)=>{
+      const faux=genAux(FLV);
+      const outData=outImg.data;
+      outData[0]=abut(outData[0],F0,faux);
+      outData[1]=abut(outData[1],F1,faux);
+      outData[2]=abut(outData[2],lv,faux);
+      const pkg=new Pkg(outData,lv,true);
+      pkg.implantSeg(i=>i<info.length?info.charCodeAt(i):-1);
+      pkg.implantSeg(i=>i<inData.length?inData[i]:-1);
+      pkg.flush(true);
+      const cvs=document.createElement("canvas");
+      cvs.width=outImg.width;
+      cvs.height=outImg.height;
+      const ctx=cvs.getContext("2d");
+      ctx.putImageData(outImg,0,0);
+      return cvs.toDataURL();
+    };
+    const extract=data=>{
+      const fmaskL=~(-1<<FLV);
+      const f0=data[0]&fmaskL;
+      const f1=data[1]&fmaskL;
+      const lv=data[2]&fmaskL;
+      if(f0!==F0||f1!==F1||lv<1||lv>5){
+        throw new UT.Excp(ERR.INFILE_INVLD,new Error());
+      }
+      const pkg=new Pkg(data,lv,false);
+      let info='';
+      pkg.extractBytes(b=>{
+        const c=UT.fcc(b);
+        if(c===IEND){
+          return false;
+        }
+        info+=c;
+      });
+      const frag=info.split(IDLI);
+      if(frag.length!==3){
+        throw new UT.Excp(ERR.INFILE_INVLD,new Error());
+      }
+      const len=parseInt(frag[0]);
+      if(len<0){
+        throw new UT.Excp(ERR.INFILE_INVLD,new Error());
+      }
+      const arr=new Uint8Array(len);
+      let i=0;
+      pkg.extractBytes(b=>{
+        if(i>=len){
+          return false;
+        }
+        arr[i++]=b;
+      });
+      return new File([arr.buffer],UT.utf8De(frag[1]),{type:frag[2]});
+    };
+    const cloak=para=>UT.preProm((ok,err)=>{
+      try{
+        const inData=new Uint8Array(para.inBuff);
+        const info=inData.length+IDLI+UT.utf8En(para.inName)+IDLI+para.inType+IEND;
+        const outImg=new Image();
+        outImg.onload=()=>{
+          try{
+            const sizeLv=calcSizeLv((info.length+inData.length)*8,para.maxLv,outImg.width,outImg.height,para.minWidth,para.minHeight,para.shrink);
+            const cvs=document.createElement("canvas");
+            cvs.width=sizeLv[0];
+            cvs.height=sizeLv[1];
+            const ctx=cvs.getContext("2d");
+            ctx.fillStyle="#ffffff";
+            ctx.fillRect(0,0,sizeLv[0],sizeLv[1]);
+            ctx.drawImage(outImg,0,0,sizeLv[0],sizeLv[1]);
+            if(para.remark){
+              ctx.font="16px Arial";
+              ctx.textBaseline="middle";
+              ctx.fillStyle="rgba(255,255,255,0.75)";
+              ctx.fillRect(0,0,ctx.measureText(para.remark).width+8,28);
+              ctx.fillStyle="#000000";
+              ctx.fillText(para.remark,4,14,sizeLv[0]-8);
+            }
+            const blob=UT.url2Blob(implant(ctx.getImageData(0,0,sizeLv[0],sizeLv[1]),inData,info,sizeLv[2]));
+            ok(new File([blob],para.outName,{type:blob.type}));
+          }catch(t){
+            err((t instanceof UT.Excp)?t:new UT.Excp(ERR.CLOAK_FAIL,t));
+          }
+        };
+        outImg.onerror=e=>err(new UT.Excp(ERR.CLOAK_FAIL,e));
+        outImg.src=para.outUrl;
+      }catch(t){
+        err((t instanceof UT.Excp)?t:new UT.Excp(ERR.CLOAK_FAIL,t));
+      }
+    });
+    const decloak=url=>UT.preProm((ok,err)=>{
+      try{
+        const img=new Image();
+        img.crossOrigin='Anonymous';
+        img.onload=()=>{
+          try{
+            const cvs=document.createElement("canvas");
+            cvs.width=img.width;
+            cvs.height=img.height;
+            const ctx=cvs.getContext("2d");
+            ctx.drawImage(img,0,0);
+            ok(extract(ctx.getImageData(0,0,img.width,img.height).data));
+          }catch(t){
+            err((t instanceof UT.Excp)?t:new UT.Excp(t.message&&t.message.toLowerCase().indexOf('cross-origin')>=0?ERR.DECLOAK_CROSS_ORIGIN_ERR:ERR.DECLOAK_FAIL,t));
+          }
+        };
+        img.onerror=e=>err(new UT.Excp(ERR.DECLOAK_FAIL,e));
+        img.src=url;
+      }catch(t){
+        err((t instanceof UT.Excp)?t:new UT.Excp(ERR.DECLOAK_FAIL,t));
+      }
+    });
+    return {
+      ERR:ERR,
+      cloak:cloak,
+      decloak:decloak
+    };
+  })();
+  </script>
+  <style type="text/css">#sp-fw-container {
+    z-index: 999999 !important;
+    text-align: left !important; }
+  
+  #sp-fw-container * {
+    font-size: 13px !important;
+    color: black !important;
+    float: none !important;
+    line-height: 13px !important;
+    width: auto; }
+  
+  #sp-fw-main-head {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important; }
+  
+  #sp-fw-span-info {
+    position: absolute !important;
+    right: 1px !important;
+    top: 0 !important;
+    font-size: 11px !important;
+    line-height: 11px !important;
+    background: none !important;
+    font-style: italic !important;
+    color: #5a5a5a !important;
+    text-shadow: white 0px 1px 1px !important; }
+  
+  #sp-fw-main select {
+    background: white;
+    height: auto; }
+  
+  #sp-fw-container input {
+    vertical-align: middle !important;
+    display: inline-block !important;
+    outline: none !important;
+    padding: 0px !important;
+    margin: 0 !important;
+    margin-right: 3px !important;
+    background: white;
+    border: 1px solid gray;
+    cursor: pointer !important;
+    height: auto; }
+  
+  #sp-fw-container input[type='number'] {
+    width: 6ch !important;
+    text-align: left !important;
+    margin: 0 3px !important; }
+  
+  #sp-fw-container input[type='number']:hover::-webkit-inner-spin-button {
+    height: 60px; }
+  
+  #sp-fw-container input[type='checkbox'] {
+    position: static !important; }
+  
+  #sp-fw-container input[type='button'] {
+    width: auto !important;
+    height: auto !important; }
+  
+  #sp-fw-container li {
+    list-style: none !important;
+    margin: 3px 0 !important;
+    border: none !important;
+    float: none !important; }
+  
+  #sp-fw-container fieldset {
+    border: 2px groove #ccc !important;
+    -moz-border-radius: 3px !important;
+    border-radius: 3px !important;
+    padding: 4px 9px 6px 9px !important;
+    margin: 2px !important;
+    display: block !important;
+    width: auto !important;
+    height: auto !important; }
+  
+  #sp-fw-container legend {
+    line-height: 20px !important;
+    margin-bottom: 0px !important; }
+  
+  #sp-fw-container fieldset > ul {
+    padding: 0 !important;
+    margin: 0 !important; }
+  
+  #sp-fw-container ul#sp-fw-a_useiframe-extend {
+    padding-left: 40px !important; }
+  
+  #sp-fw-rect {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    float: right !important;
+    height: 10px !important;
+    width: 10px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    -moz-border-radius: 3px !important;
+    border-radius: 3px !important;
+    border: 1px solid white !important;
+    -webkit-box-shadow: inset 0 5px 0 rgba(255, 255, 255, 0.3), 0 0 3px rgba(0, 0, 0, 0.8) !important;
+    -moz-box-shadow: inset 0 5px 0 rgba(255, 255, 255, 0.3), 0 0 3px rgba(0, 0, 0, 0.8) !important;
+    box-shadow: inset 0 5px 0 rgba(255, 255, 255, 0.3), 0 0 3px rgba(0, 0, 0, 0.8) !important;
+    opacity: 0.8 !important; }
+  
+  #sp-fw-dot,
+  #sp-fw-cur-mode {
+    position: absolute !important;
+    z-index: 9999 !important;
+    width: 5px !important;
+    height: 5px !important;
+    padding: 0 !important;
+    -moz-border-radius: 3px !important;
+    border-radius: 3px !important;
+    border: 1px solid white !important;
+    opacity: 1 !important;
+    -webkit-box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.3), inset 0 2px 1px rgba(255, 255, 255, 0.3), 0px 1px 2px rgba(0, 0, 0, 0.9) !important;
+    -moz-box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.3), inset 0 2px 1px rgba(255, 255, 255, 0.3), 0px 1px 2px rgba(0, 0, 0, 0.9) !important;
+    box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.3), inset 0 2px 1px rgba(255, 255, 255, 0.3), 0px 1px 2px rgba(0, 0, 0, 0.9) !important; }
+  
+  #sp-fw-dot {
+    right: -3px !important;
+    top: -3px !important; }
+  
+  #sp-fw-cur-mode {
+    left: -3px !important;
+    top: -3px !important;
+    width: 6px !important;
+    height: 6px !important; }
+  
+  #sp-fw-content {
+    padding: 0 !important;
+    margin: 5px 5px 0 0 !important;
+    -moz-border-radius: 3px !important;
+    border-radius: 3px !important;
+    border: 1px solid #a0a0a0 !important;
+    -webkit-box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.3) !important;
+    -moz-box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.3) !important;
+    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.3) !important; }
+  
+  #sp-fw-main {
+    padding: 5px !important;
+    border: 1px solid white !important;
+    -moz-border-radius: 3px !important;
+    border-radius: 3px !important;
+    background-color: #f2f2f7 !important;
+    background: -moz-linear-gradient(top, #fcfcfc, #f2f2f7 100%) !important;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#fcfcfc), to(#f2f2f7)) !important; }
+  
+  #sp-fw-foot {
+    position: relative !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: 2px !important;
+    padding-left: 2px;
+    min-height: 20px !important; }
+  
+  #sp-fw-container .sp-fw-spanbutton {
+    padding: 2px 3px !important;
+    border: 1px solid #ccc !important;
+    -moz-border-radius: 3px !important;
+    border-radius: 3px !important;
+    cursor: pointer !important;
+    background-color: #f9f9f9 !important;
+    -webkit-box-shadow: inset 0 10px 5px white !important;
+    -moz-box-shadow: inset 0 10px 5px white !important;
+    box-shadow: inset 0 10px 5px white !important;
+    display: inline-block; }
+  
+  #sp-fw-container #sp-fw-savebutton {
+    position: absolute !important;
+    right: 2px !important; }
+  
+  #sp-fw-container label {
+    cursor: pointer;
+    user-select: none;
+    display: inline; }
+  </style></head>
+  <body>
+  <div class="container headerBar" style="display:none;">
+    <button id="allFold" type="button">msall</button>
+    <button id="allCloak" type="button">msnone</button>
+    <button id="allDecloak" type="button">mshown</button>
+  </div>
+  <div class="container mainPanel">
+    
+    <div><span class="declare"></span></div>
+    
+      
+      <form id="clkForm"><nobr>Settings</nobr><br />
+        <nobr>Select ◎Default icon ◉Choose others...</nobr>
+        <input id="clkOut" type="file" accept="image/*" style="display:none;">
+        <input id="clkIn" type="file" style="display:none;">
+        <button id="clkOutBtn" type="button" style="border-radius:0px;border:0px;background:#999;color:#000;height:auto;width:auto;"class="mTopS">Browse...</button><label id="clkOutLbl" for="clkOutBtn" class="mLeftM remark"></label><br>
+        <button id="clkInBtn" type="button" style="color:#fff;"class="mTopS">Create folder (1 file)</button><label id="clkInLbl" for="clkInBtn" class="mLeftM remark"></label><br>
+        <nobr>Before we create the folder, we will collect some advanced informations.</nobr>
+        <label for="clkAddRemark" class="mTopS">Note</label><input id="clkAddRemark" type="checkbox" checked="checked"><br>
+        <input id="clkRemark" type="text" style="width:150px;" value="Cloak" maxlength="30" disabled="disabled"><br>
+        <fieldset class="mTopS">
+          <legend>Compress Settings</legend>
+          <label for="clkMaxLv" class="mRightXS">File size</label><br />
+          <select id="clkMaxLv">
+            <option value="0">400 KB</option>
+            <option value="1">800 KB</option>
+            <option value="2">1.5 MB</option>
+            <option value="3" selected="selected">3 MB</option>
+            <option value="4">4.5 MB</option>
+          </select><br>
+          <span>(<Suggested size:><span id="clkSuggestSize"></span>)</span><br>
+          <label class="mTopS">Output folder picture size</label><br>
+          <label class="mRightXS" for="clkMinWidth">Width</label><input id="clkMinWidth" type="number" value="120" min="1" max="9999" style="width:60px;"><label class="mLeftM mRightXS" for="clkMinHeight">height</label><input id="clkMinHeight" type="number" value="120" min="1" max="9999" style="width:60px;"><br>
+          <label class="mTopS" for="clkShrink">Resize Option</label><br>
+          <select id="clkShrink">
+            <option value="">Original</option>
+            <option value="TEMPERATE" selected="selected">Medium</option>
+            <option value="EXTREME">Small</option>
+          </select>
+        </fieldset>
+        <button style="color:#fff;" id="clkReset" type="button" class="mTopS">Restore</button><button style="color:#fff;" id="clkGo" type="button" class="mTopS mLeftM">Start</button><br>
+        <div id="clkResultBar" class="breakWord mTopS" style="display:none;">
+          <a id="clkSave" href="javascript:;">Save</a><a id="clkToggle" class="mLeftM" href="javascript:;">Switch</a><span id="clkInfo" class="mLeftM"></span>
+        </div>
+        <div id="clkResult" class="mTopS"></div>
+      </form>
+    
+    
+      <summary><h4 id="dclTitle">Extract</h4></summary>
+      <form id="dclForm">
+        <input id="dclImgs" type="file" accept="image/*" multiple="multiple" style="display:none;">
+        <button style="color:#fff;" id="dclReset" type="button" class="mTopS">Restore</button><br>
+        <button style="color:#fff;" id="dclImgsBtn" type="button" class="mTopS">Extract</button><label id="dclImgsLbl" for="dclImgsBtn" class="mLeftM remark"></label><br>
+        <button style="color:#fff;" id="dclNetGo" type="button" class="mTopS">Extract from Web</button><br /><label class="mTopS mLeftM" for="dclNetUrl">(Web image SRC, by lines)</label><br>
+        <textarea id="dclNetUrl" class="mTopS" rows="8" style="width:100%;"></textarea>
+        <div id="dclStatus" class="mTopS" style="display:none;"></div>
+        <div id="dclResults" class="mTopS" style="display:none;"></div>
+      </form>
+    
+    
+  </div>
+  <script type="text/javascript">
+  window.onload=()=>{
+  
+  const selfHtml='<!DOCTYPE '+'html>'+document.documentElement.outerHTML;
+  const META={
+    clk:{
+      suggestSizes:['400K','800K','1.5M','3M'],
+      warnSizeUnit:20*1024*1024,
+      downloadName:'cloak.png'
+    },
+    dcl:{
+      warnCnt:100
+    },
+    errs:{}
+  };
+  META.errs[CF.ERR.CLOAK_FAIL]='Error 0.';
+  META.errs[CF.ERR.DECLOAK_FAIL]='Error 0.';
+  META.errs[CF.ERR.DECLOAK_CROSS_ORIGIN_ERR]='Please download instead.';
+  META.errs[CF.ERR.INFILE_INVLD]='Invalid information.';
+  const CACHE={};
+  
+  const dAllFold=document.getElementById('allFold');
+  const dAllCloak=document.getElementById('allCloak');
+  const dAllDecloak=document.getElementById('allDecloak');
+  const dVer=document.getElementById('ver');
+  const dVerHis=document.getElementById('verHis');
+  const dSections=document.getElementsByTagName('details');
+  const dCloakSec=document.getElementById('cloakSec');
+  const dDecloakSec=document.getElementById('decloakSec');
+  const dClkTitle=document.getElementById('clkTitle');
+  const dDclTitle=document.getElementById('dclTitle');
+  const dDownSelf=document.getElementById('downSelf');
+  
+  const dClkForm=document.getElementById('clkForm');
+  const dClkOut=document.getElementById('clkOut');
+  const dClkIn=document.getElementById('clkIn');
+  const dClkOutBtn=document.getElementById('clkOutBtn');
+  const dClkOutLbl=document.getElementById('clkOutLbl');
+  const dClkInBtn=document.getElementById('clkInBtn');
+  const dClkInLbl=document.getElementById('clkInLbl');
+  const dClkAddRemark=document.getElementById('clkAddRemark');
+  const dClkRemark=document.getElementById('clkRemark');
+  const dClkMaxLv=document.getElementById('clkMaxLv');
+  const dClkSuggestSize=document.getElementById('clkSuggestSize');
+  const dClkMinWidth=document.getElementById('clkMinWidth');
+  const dClkMinHeight=document.getElementById('clkMinHeight');
+  const dClkShrink=document.getElementById('clkShrink');
+  const dClkReset=document.getElementById('clkReset');
+  const dClkGo=document.getElementById('clkGo');
+  const dClkResultBar=document.getElementById('clkResultBar');
+  const dClkSave=document.getElementById('clkSave');
+  const dClkToggle=document.getElementById('clkToggle');
+  const dClkInfo=document.getElementById('clkInfo');
+  const dClkResult=document.getElementById('clkResult');
+  
+  const dDclForm=document.getElementById('dclForm');
+  const dDclImgs=document.getElementById('dclImgs');
+  const dDclReset=document.getElementById('dclReset');
+  const dDclImgsBtn=document.getElementById('dclImgsBtn');
+  const dDclImgsLbl=document.getElementById('dclImgsLbl');
+  const dDclNetGo=document.getElementById('dclNetGo');
+  const dDclNetUrl=document.getElementById('dclNetUrl');
+  const dDclStatus=document.getElementById('dclStatus');
+  const dDclResults=document.getElementById('dclResults');
+  
+  const busyDoms=[dAllCloak,dAllDecloak,dClkOut,dClkIn,dClkOutBtn,dClkInBtn,dClkAddRemark,dClkRemark,dClkMaxLv,dClkMinWidth,dClkMinHeight,dClkShrink,dClkGo,dDclImgs,dDclImgsBtn,dDclNetGo,dDclNetUrl];
+  
+  const setText=(dom,text)=>{
+    dom.innerHTML="";
+    text&&dom.appendChild(document.createTextNode(text));
+  };
+  const toggleDomsSts=(doms,enable)=>doms.forEach(dom=>dom.disabled=!enable);
+  const toggleSec=sec=>sec.open=!sec.open;
+  const buildCache=(cloakName,cloakUrl,inName,inType,inUrl,cloak)=>({
+    cloakName:cloakName,
+    cloakUrl:cloakUrl,
+    inName:inName,
+    inType:inType,
+    inUrl:inUrl,
+    cloak:cloak
+  });
+  const toggleCloak=(cache,resultBox,resultInfo,hint)=>{
+    if(cache){
+      cache.cloak=!cache.cloak;
+      resultBox.innerHTML='';
+      if(cache.cloak){
+        setText(resultInfo,'Folder Cover: '+cache.cloakName);
+        const img=new Image();
+        img.alt=hint;
+        img.src=cache.cloakUrl;
+        resultBox.appendChild(img);
+      }else{
+        setText(resultInfo,'Folder Content: '+cache.inName);
+        let inDom=null;
+        switch(cache.inType.split('/')[0].toLowerCase()){
+          case 'image':
+            inDom=document.createElement('img');
+            inDom.alt=hint;
+            break;
+          case 'audio':
+            inDom=document.createElement('audio');
+            inDom.controls=true;
+            break;
+          case 'video':
+            inDom=document.createElement('video');
+            inDom.controls=true;
+            break;
+          default:
+            inDom=document.createElement('img');
+            inDom.alt=hint+' (非媒体文件)';
+        }
+        inDom.src=cache.inUrl;
+        resultBox.appendChild(inDom);
+      }
+    }
+  };
+  const toggleBusy=busy=>{
+    toggleDomsSts(busyDoms,!busy);
+    busy||clkUpdRemarkSts();
+  };
+  const updIptFileLbl=(lblDom,fileDom)=>setText(lblDom,fileDom.files.length<=0?'':fileDom.files.length===1?fileDom.files[0].name:fileDom.files.length+'个文件');
+  
+  const clkUpdRemarkSts=()=>dClkRemark.disabled=!dClkAddRemark.checked;
+  const clkUpdSuggestSize=()=>setText(dClkSuggestSize,META.clk.suggestSizes[parseInt(dClkMaxLv.value)]);
+  const clkToggleCloak=()=>toggleCloak(CACHE.clk,dClkResult,dClkInfo,'创建完成');
+  const clkClearCache=()=>{
+    CACHE.clk&&CACHE.clk.cloakUrl&&URL.revokeObjectURL(CACHE.clk.cloakUrl);
+    delete CACHE.clk;
+  };
+  const clkReset=()=>{
+    clkClearCache();
+    dClkForm.reset();
+    updIptFileLbl(dClkOutLbl,dClkOut);
+    updIptFileLbl(dClkInLbl,dClkIn);
+    clkUpdRemarkSts();
+    clkUpdSuggestSize();
+    dClkSave.href='javascript:;';
+    dClkSave.removeAttribute('download');
+    setText(dClkInfo,'');
+    dClkResult.innerHTML='';
+    dClkResultBar.style.display='none';
+  };
+  const clkGo=()=>{
+    const outFile=dClkOut.files[0];
+    const inFile=dClkIn.files[0];
+    const outEmsg='Error (0x00000001).';
+    const inEmsg='Error (0x00000002).';
+    const maxLv=parseInt(dClkMaxLv.value)+1;
+    const minWidth=parseInt(dClkMinWidth.value);
+    const minHeight=parseInt(dClkMinHeight.value);
+    if(minWidth<dClkMinWidth.min||minWidth>dClkMinWidth.max){
+      alert('Width should be between'+dClkMinWidth.min+'to'+dClkMinWidth.max+'.');
+      return;
+    }
+    if(minHeight<dClkMinHeight.min||minHeight>dClkMinHeight.max){
+      alert('Height should be between'+dClkMinHeight.min+'to'+dClkMinHeight.max+'.');
+      return;
+    }
+    const warnSize=META.clk.warnSizeUnit*maxLv;
+    if(inFile&&inFile.size>warnSize){
+      const warnMsg=Math.floor(warnSize/(1024*1024))+'MB';
+      if(!confirm('File is larger than'+warnMsg+'，It may cause oversize and crash. Bypass anyway?')){
+        dClkIn.value='';
+        return;
+      }
+    }
+    toggleBusy(true);
+    setTimeout(()=>UT.parallel([
+      UT.loadAsUrl(outFile,outEmsg),
+      UT.loadAsBuff(inFile,inEmsg)
+    ])().then(loadResults=>UT.parallel([
+      CF.cloak({
+        outUrl:loadResults[0],
+        inBuff:loadResults[1],
+        outName:META.clk.downloadName,
+        inName:inFile.name,
+        inType:inFile.type,
+        remark:dClkAddRemark.checked?dClkRemark.value:null,
+        maxLv:maxLv,
+        minWidth:minWidth,
+        minHeight:minHeight,
+        shrink:dClkShrink.value
+      }),
+      UT.loadAsUrl(inFile,inEmsg)
+    ])()).then(clkResults=>{
+      try{
+        clkClearCache();
+        CACHE.clk=buildCache(clkResults[0].name,URL.createObjectURL(clkResults[0]),inFile.name,inFile.type,clkResults[1],false);
+        dClkSave.href=CACHE.clk.cloakUrl;
+        dClkSave.download=clkResults[0].name;
+        dClkResultBar.style.display='block';
+        clkToggleCloak();
+        return Promise.resolve();
+      }catch(t){
+        return Promise.reject(new UT.Excp(CF.ERR.CLOAK_FAIL,t));
+      }
+    }).catch(e=>{
+      console.error(e);
+      alert(META.errs[e.msg]||e.msg);
+    }).finally(()=>{
+      toggleBusy(false);
+    }),0);
+  };
+  dClkOutBtn.onclick=()=>dClkOut.click();
+  dClkInBtn.onclick=()=>dClkIn.click();
+  dClkOut.onchange=()=>updIptFileLbl(dClkOutLbl,dClkOut);
+  dClkIn.onchange=()=>updIptFileLbl(dClkInLbl,dClkIn);
+  dClkAddRemark.onchange=clkUpdRemarkSts;
+  dClkMaxLv.onchange=clkUpdSuggestSize;
+  dClkReset.onclick=clkReset;
+  dClkGo.onclick=clkGo;
+  dClkToggle.onclick=clkToggleCloak;
+  clkReset();
+  
+  const dclUpdSts=()=>{
+    if(CACHE.dcl){
+      const total=CACHE.dcl.files.length;
+      const done=CACHE.dcl.done;
+      setText(dDclStatus,(done===total?'Success.':'Loading...')+' ('+done+'/'+total+')');
+    }else{
+      setText(dDclStatus,'');
+    }
+  };
+  const dclToggleCloak=i=>CACHE.dcl&&toggleCloak(CACHE.dcl.files[i],document.getElementById('dclResult'+i),document.getElementById('dclInfo'+i),'Success');
+  const dclClearCache=()=>{
+    CACHE.dcl&&CACHE.dcl.files&&CACHE.dcl.files.forEach(file=>URL.revokeObjectURL(file.inUrl));
+    delete CACHE.dcl;
+  };
+  const dclReset=()=>{
+    dclClearCache();
+    dDclForm.reset();
+    updIptFileLbl(dDclImgsLbl,dDclImgs);
+    dclUpdSts();
+    dDclStatus.style.display='none';
+    dDclResults.innerHTML='';
+    dDclResults.style.display='none';
+  };
+  const dclViewer=(item,i,nameUrlGetter)=>UT.preProm(ok=>setTimeout(()=>{
+    nameUrlGetter(item)().then(nameUrl=>UT.parallel([
+      ()=>Promise.resolve(nameUrl[0]),
+      ()=>Promise.resolve(nameUrl[1]),
+      CF.decloak(nameUrl[1])
+    ])()).then(dclResults=>{
+      try{
+        CACHE.dcl.files[i]=buildCache(dclResults[0],dclResults[1],dclResults[2].name,dclResults[2].type,URL.createObjectURL(dclResults[2]),true);
+        const dDclSave=document.getElementById('dclSave'+i);
+        dDclSave.href=CACHE.dcl.files[i].inUrl;
+        dDclSave.download=CACHE.dcl.files[i].inName;
+        const dDclToggle=document.getElementById('dclToggle'+i);
+        if(!dDclToggle.onclick){
+          dDclToggle.onclick=()=>dclToggleCloak(i);
+        }
+        document.getElementById('dclResultBar'+i).style.display='block';
+        dclToggleCloak(i);
+        return Promise.resolve();
+      }catch(t){
+        return Promise.reject(new UT.Excp(CF.ERR.DECLOAK_FAIL,t));
+      }
+    }).catch(e=>{
+      console.error(e);
+      setText(document.getElementById('dclResult'+i),META.errs[e.msg]||e.msg);
+    }).finally(()=>{
+      CACHE.dcl.done++;
+      dclUpdSts();
+      ok();
+    });
+  },0));
+  const dclGo=(items,viewer)=>{
+    const cnt=items.length;
+    let goon=cnt>0;
+    if(cnt>=META.dcl.warnCnt){
+      goon=window.confirm('You are opening'+META.dcl.warnCnt+'pictures at once, it may cause flashing back or other errors. Overide this alarm to continue?');
+    }
+    if(!goon){
+      dDclImgs.value='';
+      return;
+    }
+    toggleBusy(true);
+    dclClearCache();
+    CACHE.dcl={
+      files:new Array(cnt),
+      done:0
+    };
+    dclUpdSts();
+    dDclStatus.style.display='block';
+    dDclResults.innerHTML='';
+    dDclResults.style.display='block';
+    const queue=[];
+    for(let i=0;i<cnt;i++){
+      const v=viewer(items[i],i);
+      const box=document.createElement('div');
+      box.className='mTopS';
+      box.innerHTML='<hr/><div id="dclResultBar'+i+'" class="breakWord" style="display:none;">'
+        +'<a id="dclSave'+i+'" href="javascript:;">Save extracted file</a><a id="dclToggle'+i+'" class="mLeftM" href="javascript:;">Switch</a><span id="dclInfo'+i+'" class="mLeftM"></span>'
+        +'</div>'
+        +'<div id="dclResult'+i+'"/>Extracting...</div>';
+      dDclResults.appendChild(box);
+      queue.push(v);
+    }
+    UT.serial(queue)().finally(()=>toggleBusy(false));
+  };
+  const dclLocalGo=()=>{
+    updIptFileLbl(dDclImgsLbl,dDclImgs);
+    const files=dDclImgs.files;
+    dclGo(files,(file,i)=>dclViewer(file,i,f=>UT.parallel([
+      ()=>Promise.resolve(f.name),
+      UT.loadAsUrl(f,'Failed.')
+    ])));
+  };
+  const dclNetGo=()=>{
+    const netUrlStr=dDclNetUrl.value;
+    if(!netUrlStr){
+      return;
+    }
+    const netUrls=netUrlStr.split('\n').filter(url=>!!url);
+    dclGo(netUrls,(url,i)=>dclViewer(url,i,u=>{
+      const lastSlashIdx=u.lastIndexOf('/');
+      let name=lastSlashIdx>=0?u.substring(lastSlashIdx+1):u;
+      name=name||u;
+      return ()=>Promise.resolve([name,u]);
+    }));
+  };
+  dDclReset.onclick=dclReset;
+  dDclImgsBtn.onclick=()=>dDclImgs.click();
+  dDclImgs.onchange=dclLocalGo;
+  dDclNetGo.onclick=dclNetGo;
+  dclReset();
+  
+  const foldAll=()=>{
+    for(let i=0;i<dSections.length;i++){
+      dSections[i].open=false;
+    }
+  };
+  const allToggle=clk=>{
+    const queue=[];
+    if(CACHE.clk&&CACHE.clk.cloak!==clk){
+      queue.push(UT.preProm(ok=>setTimeout(()=>{
+        clkToggleCloak();
+        ok();
+      },0)));
+    }
+    if(CACHE.dcl&&CACHE.dcl.files){
+      CACHE.dcl.files.forEach((file,i)=>{
+        if(file&&file.cloak!==clk){
+          queue.push(UT.preProm(ok=>setTimeout(()=>{
+            dclToggleCloak(i);
+            ok();
+          },0)));
+        }
+      });
+    }
+    if(queue.length>0){
+      toggleBusy(true);
+      UT.serial(queue)().finally(()=>toggleBusy(false));
+    }
+  };
+  const updVer=()=>{
+    const ver=dVerHis.querySelectorAll('tbody>tr:last-child>td:first-child')[0].innerHTML;
+    document.title+=ver;
+    setText(dVer,ver);
+  };
+  dAllFold.onclick=foldAll;
+  dAllCloak.onclick=()=>allToggle(true);
+  dAllDecloak.onclick=()=>allToggle(false);
+  updVer();
+  dDownSelf.href=URL.createObjectURL(new Blob([selfHtml],{type:"text/html"}));
+  
+  const hotKeyMap={};
+  const regHotKey=(key,dom,cbk)=>{
+    hotKeyMap[key.charCodeAt(0)]=cbk;
+    setText(dom,dom.innerHTML+'['+key.charAt(0)+']');
+  };
+  const applyHotKey=()=>{
+    document.addEventListener('keypress',e=>{
+      console.log(e.keyCode);
+      const handler=hotKeyMap[e.keyCode];
+      handler&&handler();
+    });
+  };
+  const stopHotKey=e=>e.stopPropagation();
+  const stopHotKeyOnDoms=doms=>doms.forEach(dom=>dom.addEventListener('keypress',stopHotKey));
+  regHotKey('f',dAllFold,()=>dAllFold.click());
+  regHotKey('c',dAllCloak,()=>dAllCloak.click());
+  regHotKey('d',dAllDecloak,()=>dAllDecloak.click());
+  regHotKey('1',dClkTitle,()=>toggleSec(dCloakSec));
+  regHotKey('2',dDclTitle,()=>toggleSec(dDecloakSec));
+  regHotKey('o',dClkOutBtn,()=>dClkOutBtn.click());
+  regHotKey('i',dClkInBtn,()=>dClkInBtn.click());
+  regHotKey('m',dClkGo,()=>dClkGo.click());
+  regHotKey('s',dDclImgsBtn,()=>dDclImgsBtn.click());
+  regHotKey('a',dDclNetGo,()=>dDclNetGo.click());
+  applyHotKey();
+  stopHotKeyOnDoms([dClkRemark,dClkMaxLv,dClkMinWidth,dClkMinHeight,dClkShrink,dDclNetUrl]);
+  
+  };
+  </script>
+  
+  
+  <div id="sp-fw-container" style="position: fixed; top: 3px; right: 4px;"><div id="sp-fw-rect" style="background-color: rgb(139, 0, 232);" title="读取中状态">
+    <div id="sp-fw-dot" style="display: none; background-color: rgb(0, 255, 5);"></div>
+    <div id="sp-fw-cur-mode" style="display: block; background-color: rgb(85, 100, 175);"></div>
+  </div>
+  <div id="sp-fw-content" style="display: none;">
+    <div id="sp-fw-main">
+      <div id="sp-fw-main-head">
+        <label for="sp-fw-a_enable">Mode</label>
+        <select id="sp-fw-a_enable" name="sp-fw-a_enable">
+          <option value="preloader">Preloader</option>
+          <option value="autopager">Autopager</option>
+        </select>
+        <span id="sp-fw-span-info">Super_preloader</span>
+      </div>
+      <fieldset>
+        <legend title="Preloader helps accelerating loading">Preloader Settings</legend>
+        <ul>
+          <li>
+            <label for="sp-fw-useiframe">
+              <input type="checkbox" title="Use iframe to load next page into cache, otherwise use XHR to get the content. Do not use this if everthing is normal." id="sp-fw-useiframe" name="sp-fw-useiframe">Use iframe
+            </label>
+            <label for="sp-fw-viewcontent">
+              <input type="checkbox" title="Check preload contents." id="sp-fw-viewcontent" name="sp-fw-viewcontent">Show
+              preloaded content
+            </label>
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset id="sp-fw-autopager-field" style="display:block;">
+        <legend title="Autopager frees you from clicking next page">Autopager Settings</legend>
+        <ul>
+          <li>
+            <label for="sp-fw-a_useiframe">
+              <input type="checkbox" title="Use iframe to load next page into cache, otherwise use XHR to get the content. Do not use this if everthing is normal" id="sp-fw-a_useiframe" name="sp-fw-a_useiframe">Use iframe
+            </label>
+            <label for="sp-fw-a_newIframe">
+              <input type="checkbox" title="Use a new iframe for the next page. It may solve problems with figures" id="sp-fw-a_newIframe" name="sp-fw-a_newIframe">Use new iframe
+            </label>
+            <ul id="sp-fw-a_useiframe-extend">
+              <li>
+                <label for="sp-fw-a_iloaded">
+                  <input type="checkbox" title="Append the content untill iframe is fully loaded" id="sp-fw-a_iloaded" name="sp-fw-a_iloaded">Wait iframe to be fully loaded
+                </label>
+              </li>
+              <li>
+                <label for="sp-fw-a_itimeout">
+                  <input type="number" min="0" title="Wait for X ms untill the content is appended to the current page. (Default: 0)" id="sp-fw-a_itimeout" name="sp-fw-a_itimeout"> ms delay
+                </label>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <label for="sp-fw-a_manualA">
+              <input type="checkbox" id="sp-fw-a_manualA" name="sp-fw-a_manualA" title="The next page won\'t be appended to the current page and you need to click a button">Manual mode
+            </label>
+          </li>
+          <li>
+            <label for="sp-fw-a_remain">
+              Trigger autopager until the height is <input type="number" min="0" id="sp-fw-a_remain" name="sp-fw-a_remain">x
+              page height
+            </label>
+          </li>
+          <li>
+            <label for="sp-fw-a_maxpage">
+              Turn at most <input type="number" min="0" id="sp-fw-a_maxpage" name="sp-fw-a_maxpage"> pages
+            </label>
+          </li>
+          <li>
+            <label for="sp-fw-a_separator">
+              <input type="checkbox" id="sp-fw-a_separator" name="sp-fw-a_separator" title="Show the page navigation bar">Navigation bar
+            </label>
+          </li>
+          <li>
+            <label for="sp-fw-a_force">
+              <input type="checkbox" title="Append the whole next page to current page (When there is not rule for the website, this is the only method)" id="sp-fw-a_force" name="sp-fw-a_force" disabled="">Force to join page
+            </label>
+          </li>
+          <li>
+            <label for="sp-fw-a_ipages_0">
+              <input type="checkbox" id="sp-fw-a_ipages_0" name="sp-fw-a_ipages_0" title="Turn X pages instantly once the script is loaded. This is good for some gallery.">Turn <input type="number" min="0" id="sp-fw-a_ipages_1" name="sp-fw-a_ipages_1" title="0 for infinity"> pages
+            </label>
+            instantly
+            <span class="sp-fw-spanbutton" id="sp-fw-a_starti">Start</span>
+          </li>
+        </ul>
+      </fieldset>
+      <div id="sp-fw-foot">
+        <label for="sp-fw-enable">
+          <input type="checkbox" id="sp-fw-enable" title="Enable for thie website" name="sp-fw-enable">Enable
+        </label>
+        <span id="sp-fw-setup" class="sp-fw-spanbutton" title="Global Settings">Global Settings</span>
+        <span id="sp-fw-savebutton" class="sp-fw-spanbutton" title="Save settings">Save</span>
+      </div>
+    </div>
+  </div>
+  </div></body><div style="all: initial;"><div id="__hcfy__" style="all: initial;"></div></div></html>
+  
