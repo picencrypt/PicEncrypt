@@ -7,339 +7,211 @@
 </head>
 <body>
   <!--Citrus!-->
-  <style>
-    input{
-    background:#fff;
-    border:3px solid #000; 
-    height:1rem;
-    border-radius:5px;
-     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-     outline:none;
-    }
-    button{
-    background:rgb(255, 0, 0);
-    border:3px solid rgb(255, 0, 0);
-     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    
-    border-radius:8px;
-    height:2.5rem;
-    width:10rem;
-    font-size: 16px;
-    -webkit-transition-duration: 0.4s; /* Safari */
-        transition-duration: 0.4s;
+  <body onselectstart ='return false'>
+    <style>
+       input{
+       
+       border-radius:5px;
+      
         outline:none;
-    }
-    button:hover{
-    background:rgb(85, 0, 0);
-    border:3px solid rgb(85, 0, 0);
-     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    
-    border-radius:8px;
-    height:2.5rem;
-    width:10rem;
-    font-size: 16px;
-    outline:none;
-    }
-    select{
-    background:#fc0;
-    border:3px solid #fc0;
-    border-radius:5px;
-    height:2rem;
-    width:10rem;
-     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-     outline:none;
-    }
-    </style>
+        border:0px;
+        text-align:center;
+       }
+       button{ 
+        box-shadow: 0 2px 0 0 rgb(255, 0, 0), 0 6px 20px 0 rgba(0,0,0,0.19);
+       
+       border-radius:8px;
+       height:2.5rem;
+       width:10rem;
+       font-size: 16px;
+           outline:none;
+       }
+       button:hover{
+       background:#777;
+       border:1px solid rgb(85, 85, 85);
+       box-shadow: 0 2px 0 0 rgb(255, 0, 0), 0 6px 20px 0 rgba(0,0,0,0.19);
+       border-radius:8px;
+       height:2.5rem;
+       width:10rem;
+       font-size: 16px;
+       outline:none;
+       }
+       select{
+         box-shadow: 0 2px 0 0 rgb(255, 0, 0), 0 6px 20px 0 rgba(0,0,0,0.19);
+       
+       border-radius:8px;
+       height:2.5rem;
+       width:10rem;
+       font-size: 16px;
+       -webkit-transition-duration: 0.4s; /* Safari */
+           transition-duration: 0.4s;
+           outline:none;
+       }
+       </style>
 <style>
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #262626;
-        --textColor: #444;
-        --borderColor: #2c2c3a;
-        --primary: #24acf2;
-      }
-    }
-
-    @media (prefers-color-scheme: light) {
-      :root {
-        --bg: #fff;
-        --textColor: #aaa;
-        --borderColor: #2c2c3a;
-        --primary: #1bcfe7;
-      }
-    }
-
-    :root[data-theme="light"] {
-      --bg: #efefef;
-      --textColor: #aaa;
-      --borderColor: #2c2c3a;
-      --primary: #1bcfe7;
-    }
-
-    :root[data-theme="dark"] {
+  @media (prefers-color-scheme: dark) {
+    :root {
       --bg: #262626;
-      --textColor: #444;
+      --textColor: #fff;
       --borderColor: #2c2c3a;
       --primary: #24acf2;
     }
+    div{
+      background-color: #262626;
+    }
+    button{background:#333;
+    color:#fff;
+    border:0px solid rgb(64, 64, 64);}
+    select{background:#333;
+    color:#fff;
+    border:0px solid rgb(64, 64, 64);}
+    input{background:#333;
+    color:#fff;}
+    input::-webkit-input-placeholder{ 
+ font-weight:600;
+  color:rgb(135, 135, 135);
+  line-height:40px;
+  text-align:center;
+}}
 
-    * {
-      margin: 0;
-      padding: 0;
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #fff;
+      --textColor: #000;
+      --borderColor: #2c2c3a;
+      --primary: #1bcfe7;
     }
+    div{
+      background-color: #fff;
+    }
+    button{
+      border:1px solid rgb(172, 172, 172);
+    }
+    select{
+      border:1px solid rgb(172, 172, 172);
+    }
+    input::-webkit-input-placeholder{
+      text-align: center;
+      color: rgb(99, 99, 99);
+    }
+  }
 
-    body {
-      background-color: var(--bg);
-      color: var(--textColor);
-    }
+  :root[data-theme="light"] {
+    --bg: #efefef;
+    --textColor: #000;
+    --borderColor: #2c2c3a;
+    --primary: #1bcfe7;
+  }
 
-    .flex {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      width: 100vw;
+  :root[data-theme="dark"] {
+    --bg: #262626;
+    --textColor: #fff;
+    --borderColor: #2c2c3a;
+    --primary: #24acf2;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--textColor);
+  }
+
+  .flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+  }
+</style>
+<script>
+  function changeMode() {
+    console.log("123");
+    const darkMode =
+      window.document.documentElement.getAttribute("data-theme") || "light";
+    console.log(darkMode);
+    if (darkMode == "light") {
+      window.document.documentElement.setAttribute("data-theme", "dark");
+    } else {
+      window.document.documentElement.setAttribute("data-theme", "light");
     }
-  </style>
-  <script>
-    function changeMode() {
-      console.log("123");
-      const darkMode =
-        window.document.documentElement.getAttribute("data-theme") || "light";
-      console.log(darkMode);
-      if (darkMode == "light") {
-        window.document.documentElement.setAttribute("data-theme", "dark");
-      } else {
-        window.document.documentElement.setAttribute("data-theme", "light");
-      }
-    }
-  </script>
+  }
+</script>
+<style>
+::-webkit-scrollbar {
+height: 0;
+width: 0;
+color: transparent;
+}
+
+::-webkit-scrollbar {
+width: 12px;   
+background: transparent;
+}
+
+::-webkit-scrollbar-track {
+-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);    
+border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+border-radius: 6px;
+height: 20px;    
+background-color: #666;
+}
+</style>
+<style>
+div.fixedAdachi {
+  position: fixed;
+  top: 5px;
+  right: 5px;}
+  div.fixedShimamura {
+  position: fixed;
+  top: 5px;
+  left: 5px;}
+</style>
 
 <div style="padding:0 16px;text-align:center">
 
 
 
-   <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-   <!-- Created with Inkscape (http://www.inkscape.org/) -->
-   
-   <svg
-      width="100%"
-      height="8.5%"
-      viewBox="0 0 264.58333 22.489583"
-      version="1.1"
-      id="svg5"
-      inkscape:version="1.1 (c4e8f9e, 2021-05-24)"
-      sodipodi:docname="head.svg"
-      xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-      xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:svg="http://www.w3.org/2000/svg">
-     <sodipodi:namedview
-        id="namedview7"
-        pagecolor="#ffffff"
-        bordercolor="#000000"
-        borderopacity="0.25"
-        inkscape:pageshadow="2"
-        inkscape:pageopacity="0.0"
-        inkscape:pagecheckerboard="0"
-        inkscape:document-units="px"
-        showgrid="true"
-        units="px"
-        width="1000px"
-        inkscape:zoom="2"
-        inkscape:cx="489.5"
-        inkscape:cy="138.5"
-        inkscape:window-width="2160"
-        inkscape:window-height="1380"
-        inkscape:window-x="0"
-        inkscape:window-y="0"
-        inkscape:window-maximized="1"
-        inkscape:current-layer="layer1"
-        inkscape:snap-page="true"
-        inkscape:snap-text-baseline="true"
-        inkscape:snap-center="true"
-        inkscape:snap-object-midpoints="true"
-        inkscape:snap-midpoints="true"
-        inkscape:snap-smooth-nodes="true"
-        inkscape:snap-intersection-paths="true"
-        inkscape:object-paths="true"
-        inkscape:snap-grids="true"
-        height="200px">
-       <inkscape:grid
-          type="xygrid"
-          id="grid1605" />
-     </sodipodi:namedview>
-     <defs
-        id="defs2">
-       <linearGradient
-          inkscape:collect="always"
-          id="linearGradient4847">
-         <stop
-            style="stop-color:#ffcc00;stop-opacity:1;"
-            offset="0"
-            id="stop4843" />
-         <stop
-            style="stop-color:#ffcc00;stop-opacity:0;"
-            offset="1"
-            id="stop4845" />
-       </linearGradient>
-       <linearGradient
-          inkscape:collect="always"
-          id="linearGradient4612">
-         <stop
-            style="stop-color:#ffaaaa;stop-opacity:1;"
-            offset="0"
-            id="stop4608" />
-         <stop
-            style="stop-color:#ffaaaa;stop-opacity:0;"
-            offset="1"
-            id="stop4610" />
-       </linearGradient>
-       <linearGradient
-          inkscape:collect="always"
-          id="linearGradient33031">
-         <stop
-            style="stop-color:#fff6d5;stop-opacity:1;"
-            offset="0"
-            id="stop33027" />
-         <stop
-            style="stop-color:#fff6d5;stop-opacity:0;"
-            offset="1"
-            id="stop33029" />
-       </linearGradient>
-       <rect
-          x="340"
-          y="0"
-          width="560"
-          height="230"
-          id="rect24141" />
-       <rect
-          x="35"
-          y="35"
-          width="15"
-          height="15"
-          id="rect5421" />
-       <rect
-          x="68"
-          y="65"
-          width="81"
-          height="54"
-          id="rect76447" />
-       <rect
-          x="81"
-          y="65"
-          width="83"
-          height="56"
-          id="rect67531" />
-       <rect
-          x="71"
-          y="77"
-          width="77"
-          height="26.000002"
-          id="rect59825" />
-       <rect
-          x="89"
-          y="72"
-          width="65.447403"
-          height="81.864227"
-          id="rect42071" />
-       <rect
-          x="100"
-          y="80"
-          width="1000"
-          height="280"
-          id="rect29548" />
-       <rect
-          x="68"
-          y="65"
-          width="81"
-          height="54"
-          id="rect97624" />
-       <rect
-          x="68"
-          y="65"
-          width="81"
-          height="54"
-          id="rect112190" />
-       <rect
-          x="35"
-          y="35"
-          width="15"
-          height="15"
-          id="rect29867" />
-       <linearGradient
-          inkscape:collect="always"
-          xlink:href="#linearGradient33031"
-          id="linearGradient33033"
-          x1="40.178005"
-          y1="42.661999"
-          x2="45.374008"
-          y2="42.661999"
-          gradientUnits="userSpaceOnUse" />
-       <linearGradient
-          inkscape:collect="always"
-          xlink:href="#linearGradient4612"
-          id="linearGradient4614"
-          x1="5.2916665"
-          y1="-84.666664"
-          x2="264.58298"
-          y2="11.244792"
-          gradientUnits="userSpaceOnUse" />
-       <linearGradient
-          inkscape:collect="always"
-          xlink:href="#linearGradient4847"
-          id="linearGradient4849"
-          x1="264.58334"
-          y1="13.229166"
-          x2="15.875"
-          y2="74.083336"
-          gradientUnits="userSpaceOnUse" />
-     </defs>
-     <g
-        inkscape:label="图层 1"
-        inkscape:groupmode="layer"
-        id="layer1">
-       <text
-          xml:space="preserve"
-          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.74986px;font-family:'Arno Pro';-inkscape-font-specification:'Arno Pro';fill:#ffffff;stroke:none;stroke-width:0.145821"
-          x="49.57922"
-          y="9.8448877"
-          id="text101100"
-          transform="scale(1.8144362,0.55113539)"><tspan
-            sodipodi:role="line"
-            id="tspan101098"
-            style="stroke-width:0.145821"
-            x="49.57922"
-            y="9.8448877"> </tspan></text>
-       <rect
-          style="fill:url(#linearGradient4614);fill-opacity:1;stroke:none;stroke-width:1.66969;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-          id="rect2207"
-          width="264.58298"
-          height="22.489584"
-          x="0"
-          y="-3.8857806e-15" />
-       <rect
-          style="fill:url(#linearGradient4849);fill-opacity:1;stroke:none;stroke-width:1.66969;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-          id="rect4823"
-          width="264.58298"
-          height="22.489584"
-          x="0"
-          y="-3.8857806e-15" />
-       <text
-          xml:space="preserve"
-          transform="matrix(0.61132917,0,0,0.61132917,-247.05172,5.8565366)"
-          id="text24139"
-          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;white-space:pre;shape-inside:url(#rect24141);fill:#000000;stroke:none;stroke-width:11.3386"
-          x="29.567934"
-          y="0"><tspan
-            x="582"
-            y="12.06"
-            id="tspan970">PicEncrypt</tspan></text>
-     </g>
-   </svg>
+  <br />
+  <br />
+
+
 <br />
-<a href="index.html" class="pathlink">PicEncrypt</a> <nobr style="color:#888;font-size:36px;">&nbsp;&gt;&nbsp;PicFolder</nobr>
+<style>
+  div.fixedAdachi {
+    position: fixed;
+    top: 5px;
+    right: 5px;}
+    div.fixedShimamura {
+    position: fixed;
+    top: 5px;
+    left: 5px;}
+  </style>
+  <style></style>
+
+
+
+<div style="padding:0 16px;text-align:center";>
+  <div class="pathlink"style="-webkit-app-region:drag;position:fixed;top:5px;left:49px;font-size:15px;">PicEncrypt</div> 
+  <div class="fixedShimamura" ondragstart='return false'>
+ <img src="picencrypt.svg" style="width:20px;border-width:0;"> </div>
+ <div class="fixedAdachi"><button onclick="window.close();" style="height:20px;width:20px;font-size:20px;box-shadow:none;">×</button></div>
+ <div><button onclick="window.location.href='main.html'" style="position:fixed;left:27px;top:5px;height:20px;width:20px;font-size:15px;box-shadow:none;">◀</button></div>
+  
+  <div class="fixedAdachi"><button onclick="window.close();" style="height:20px;width:20px;font-size:20px;box-shadow:none;">×</button></div>
+    <style>
+     .pathlink {font-size:15px;text-decoration:none;}
+   </style>
+   <style>
+      .pathref {color:#f00;font-size:18px;}
+   </style>
 <style>
   .pathlink {color:#888;font-size:36px;text-decoration:none;}
 </style>
@@ -354,10 +226,10 @@
           <span>Marker</span>&ensp;<input style="width:80px" id="ident" type="text" value="tpWj" />&ensp;<span>[Key object]</span>
         </div>
       <div>&emsp;</div>
-      <button style="color:#fff" id="btn">Create folder</button>
-      <nobr style="font-size:34px;">|</nobr>
-      
-      <button style="color:#fff" onclick="window.location.href='msedgecore.html'"><a href="msedgecore.html"></a>Create folder (1 file)</button>
+      <button style="" id="btn">Create folder</button>
+     <br />
+      <br />
+      <button style="" onclick="window.location.href='msedgecore.html'"><a href="msedgecore.html"></a>Create folder (1 file)</button>
       <br />
       <br />
       <br />
