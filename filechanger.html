@@ -272,7 +272,7 @@ pnn_>c+<1I-\-J               mXJJmU|fCUUCwj|\|jJUUQwxttftxQLLLQqYxxxrrLCJJJ0pn\\
 
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
          
-  <title>PicEncrypt</title>
+  <title></title>
   </head>
   <body onselectstart ='return false'>
      <style>
@@ -336,7 +336,7 @@ pnn_>c+<1I-\-J               mXJJmU|fCUUCwj|\|jJUUQwxttftxQLLLQqYxxxrrLCJJJ0pn\\
         color:#fff;}
         input::-webkit-input-placeholder{ 
      font-weight:600;
-      color:rgb(135, 135, 135);
+      color:rgb(256, 256, 256);
       line-height:40px;
       text-align:center;
   }}
@@ -447,11 +447,13 @@ pnn_>c+<1I-\-J               mXJJmU|fCUUCwj|\|jJUUQwxttftxQLLLQqYxxxrrLCJJJ0pn\\
   
   <div style="padding:0 16px;text-align:center";>
     
-     <div class="pathlink"style="-webkit-app-region:drag;position:fixed;top:5px;left:49px;font-size:15px;">PicEncrypt</div> 
-   <div><button onclick="window.location.href='main.html'" style="position:fixed;left:27px;top:5px;height:20px;width:20px;font-size:15px;box-shadow:none;">◀</button></div>
-     <div class="fixedShimamura" ondragstart='return false'>
-    <img src="picencrypt.svg" style="width:20px;"> </div>
-    <div class="fixedAdachi"><button onclick="window.close();" style="height:20px;width:20px;font-size:20px;box-shadow:none;">×</button></div>
+    <div style="padding:0 16px;text-align:center">
+      <div style="padding:0 16px;text-align:center";>
+    <div class="pathlink"style="-webkit-app-region:drag;height:30px;text-color:none;position:fixed;top:0px;left:20;width: 85%;"></div> 
+        <div class="pathlink"style="-webkit-app-region:drag;position:fixed;top:5px;left:25px;font-size:15px;"></div> 
+        
+         
+       <div><button onclick="window.location.href='main.html'" style="position:fixed;left:5px;top:5px;height:20px;width:20px;font-size:15px;box-shadow:none;background:none;border:0px;">◀</button></div>
       <style>
        .pathlink {font-size:15px;text-decoration:none;}
      </style>
@@ -472,7 +474,7 @@ pnn_>c+<1I-\-J               mXJJmU|fCUUCwj|\|jJUUQwxttftxQLLLQqYxxxrrLCJJJ0pn\\
           </style>
           
 <input style="border:0px;display:none" type="file" onchange="ipt()" id="ipt">
-<button style=";" onclick="select8wekyb3d8bbwe()">Open</button>
+<button   onclick="select8wekyb3d8bbwe()">Open</button>
 
 <br />
 <br />
@@ -493,12 +495,12 @@ pnn_>c+<1I-\-J               mXJJmU|fCUUCwj|\|jJUUQwxttftxQLLLQqYxxxrrLCJJJ0pn\\
 <input type="checkbox" checked="true" id="noteboot"style="box-shadow:none;height:auto;">Enable</input>
 <br />
 <br />
-<button style=";" onclick="gen()">Convert</button>
+<button   onclick="gen()">Convert</button>
 <div id="miaoshu" style="padding:8px 0;text-align:center">
 </div>
 <div id="imgwrap"></div>
 <span></span><input style="border:0px;display:none" type="file" onchange="opt()" id="opt" multiple="multiple">
-<button style=";" onclick="selectend8wekyb3d8bbwe()">Extract</button>
+<button   onclick="selectend8wekyb3d8bbwe()">Extract</button>
 <div id="loading" style="text-align:center;display:none;padding:8px 0">
 Reading...
 </div>
@@ -932,7 +934,7 @@ function genpic(img,slicesize,info){
 //Citrus
 let n=Math.ceil(img.fileabf.byteLength/slicesize)
 let l=[
-["0","0.1.2","Encoded by PicEncrypt"],
+["0","0.1.2","Encoded by 256, 256, 256"],
 ["A",img.filename],
 ["B",img.filetype],
 ["T",Date.now().toString(36)],

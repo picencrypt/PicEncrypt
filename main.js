@@ -3,14 +3,15 @@ const { app, BrowserWindow } = require('electron')
 const createWindow = () => {
   const win = new BrowserWindow({
     width: 400,
-    height: 600,
+    height: 800,
     icon:'./build/icons/default.png',
     title:"PicEncrypt",
     frame: false,
 resizable: false,
+transparent: true,
   })
   
-  win.loadFile('main.html')
+  win.loadFile('app.html')
 }
 
 app.whenReady().then(() => {
@@ -20,4 +21,4 @@ const electron = require('electron')
 
 const Menu = electron.Menu
 
-Menu.setApplicationMenu(null)
+Menu.setApplicationMenu(null);

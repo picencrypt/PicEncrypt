@@ -268,7 +268,7 @@
                      -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
          
-<title>PicEncrypt</title>
+<title> </title>
 </head>
 <body onselectstart ='return false'>
    <style>
@@ -280,14 +280,13 @@
        border:0px;
        text-align:center;
       }
-      button{ 
+      button{
        box-shadow: 0 2px 0 0 rgb(255, 0, 0), 0 6px 20px 0 rgba(0,0,0,0.19);
-      
-      border-radius:8px;
-      height:2.5rem;
-      width:10rem;
-      font-size: 16px;
-          outline:none;
+       border-radius:8px;
+       height:2.5rem;
+       width:10rem;
+       font-size: 16px;
+       outline:none;
       }
       button:hover{
       background:#777;
@@ -465,7 +464,7 @@
       color:#fff;}
       input::-webkit-input-placeholder{ 
    font-weight:600;
-    color:rgb(135, 135, 135);
+    color:rgb(256, 256, 256);
     line-height:40px;
     text-align:center;
 }}
@@ -573,12 +572,11 @@ color: transparent;
 
 <div style="padding:0 16px;text-align:center">
   <div style="padding:0 16px;text-align:center";>
-
-    <div class="pathlink"style="-webkit-app-region:drag;position:fixed;top:5px;left:49px;font-size:15px;">PicEncrypt</div> 
-    <div class="fixedShimamura" ondragstart='return false'>
-   <img src="picencrypt.svg" style="width:20px;border-width:0;"> </div>
-   <div class="fixedAdachi"><button onclick="window.close();" style="height:20px;width:20px;font-size:20px;box-shadow:none;">×</button></div>
-   <div><button onclick="window.location.href='main.html'" style="position:fixed;left:27px;top:5px;height:20px;width:20px;font-size:15px;box-shadow:none;">◀</button></div>
+<div class="pathlink"style="-webkit-app-region:drag;height:30px;text-color:none;position:fixed;top:0px;left:20;width: 85%;"></div> 
+    <div class="pathlink"style="-webkit-app-region:drag;position:fixed;top:5px;left:25px;font-size:15px;"> </div> 
+    
+     
+   <div><button onclick="window.location.href='main.html'" style="position:fixed;left:5px;top:5px;height:20px;width:20px;font-size:15px;box-shadow:none;background:none;border:0px;">◀</button></div>
      <style>
       .pathlink {font-size:15px;text-decoration:none;}
     </style>
@@ -592,7 +590,7 @@ color: transparent;
   <style type="text/css">
   *{box-sizing:border-box;}
   body{margin:0;}
-  button{padding:1px 3px;}
+  button{padding:0px 0px;}
   details{display:block;}
   img,audio,video{border:1px solid #7F7F7F;display:inline-block;max-width:100%;}
   label{display:inline-block;}
@@ -601,16 +599,15 @@ color: transparent;
   table tr th,table tr td{border:1px solid #7f7f7f;padding:2px 5px;}
   ul{margin:0;padding-left:25px;}
   .breakWord{overflow-wrap:break-word;}
-  .container{padding:10px 15px;}
+  .container{padding:10px 10px;}
   .declare{color:#ff3f3f;font-weight:bold;}
   .headerBar{background-color:#dfffff;height:45px;left:0;position:fixed;top:0;width:100%;}
   .headerBar button{height:25px;}
-  .mLeftM{margin-left:15px;}
   .mRightXS{margin-right:5px;}
   .mTopS{margin-top:8px;}
   .mainPanel{margin-top:30px;}
   .noWrap{white-space:nowrap;word-break:keep-all;}
-  .remark{color:#3f3f3f;font-family:'新宋体';font-size:0.8rem;}
+  .remark{color:#3f3f3f;font-family:'arial';font-size:0.8rem;}
   </style>
   <script type="text/javascript">
   const UT=(()=>{
@@ -943,7 +940,8 @@ color: transparent;
   </style>
   <style type="text/css">#sp-fw-container {
     z-index: 999999 !important;
-    text-align: left !important; }
+    text-align: left !important;
+    }
   
   #sp-fw-container * {
     font-size: 13px !important;
@@ -1037,10 +1035,10 @@ color: transparent;
     margin: 0 !important;
     -moz-border-radius: 3px !important;
     border-radius: 3px !important;
-    border: 1px solid white !important;
-    -webkit-box-shadow: inset 0 5px 0 rgba(255, 255, 255, 0.3), 0 0 3px rgba(0, 0, 0, 0.8) !important;
-    -moz-box-shadow: inset 0 5px 0 rgba(255, 255, 255, 0.3), 0 0 3px rgba(0, 0, 0, 0.8) !important;
-    box-shadow: inset 0 5px 0 rgba(255, 255, 255, 0.3), 0 0 3px rgba(0, 0, 0, 0.8) !important;
+    border: 1px solid rgba(255, 255, 255, 0) !important;
+    -webkit-box-shadow: inset 0 5px 0 rgba(255, 255, 255, 0.3), 0 0 3px rgba(0, 0, 0, 0) !important;
+    -moz-box-shadow: inset 0 5px 0 rgba(255, 255, 255, 0), 0 0 3px rgba(0, 0, 0, 0) !important;
+    box-shadow: inset 0 5px 0 rgba(255, 255, 255, 0), 0 0 3px rgba(0, 0, 0, 0) !important;
     opacity: 0.8 !important; }
   
   #sp-fw-dot,
@@ -1052,11 +1050,12 @@ color: transparent;
     padding: 0 !important;
     -moz-border-radius: 3px !important;
     border-radius: 3px !important;
-    border: 1px solid white !important;
+    border: 1px solid rgba(255, 255, 255, 0) !important;
     opacity: 1 !important;
-    -webkit-box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.3), inset 0 2px 1px rgba(255, 255, 255, 0.3), 0px 1px 2px rgba(0, 0, 0, 0.9) !important;
-    -moz-box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.3), inset 0 2px 1px rgba(255, 255, 255, 0.3), 0px 1px 2px rgba(0, 0, 0, 0.9) !important;
-    box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.3), inset 0 2px 1px rgba(255, 255, 255, 0.3), 0px 1px 2px rgba(0, 0, 0, 0.9) !important; }
+    -webkit-box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.3), inset 0 2px 1px rgba(255, 255, 255, 0), 0px 1px 2px rgba(0, 0, 0, 0) !important;
+    -moz-box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.3), inset 0 2px 1px rgba(255, 255, 255, 0), 0px 1px 2px rgba(0, 0, 0, 0) !important;
+    box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.3), inset 0 2px 1px rgba(255, 255, 255, 0), 0px 1px 2px rgba(0, 0, 0, 0) !important;
+    }
   
   #sp-fw-dot {
     right: -3px !important;
@@ -1127,17 +1126,17 @@ color: transparent;
     <div><span class="declare"></span></div>
     
       
-      <form id="clkForm"><nobr>Settings</nobr><br />
+      <!--<form id="clkForm">--><nobr>Settings</nobr><br />
         <nobr>Select ◎Default icon ◉Choose others...</nobr>
         <input id="clkOut" type="file" accept="image/*" style="display:none;">
-        <input id="clkIn" type="file" style="display:none;"><br />
-        <button id="clkOutBtn" type="button" style="border-radius:0px;border:0px;background:#999;color:#000;height:auto;width:auto;"class="mTopS">Browse...</button><label id="clkOutLbl" for="clkOutBtn" class="mLeftM remark"></label><br>
-        <button id="clkInBtn" type="button" style=";"class="mTopS">Create folder (1 file)</button><label id="clkInLbl" for="clkInBtn" class="mLeftM remark"></label><br>
+        <input id="clkIn" type="file" style="display:none;">
+        <button id="clkOutBtn" type="button" style="border-radius:0px;border:0px;background:#999;color:#000;height:auto;width:auto;"class="mTopS">Browse...</button><label id="clkOutLbl" for="clkOutBtn" class="mLeftM remark"></label>
+        <div style="padding:0 16px;text-align:center"><button id="clkInBtn" type="button"  class="mTopS">Create folder (1 file)</button></div><label id="clkInLbl" for="clkInBtn" class="mLeftM remark"></label><br>
         
         <br /><label for="clkAddRemark" class="mTopS">Note</label><input id="clkAddRemark" type="checkbox" checked="checked"><br>
-        <input id="clkRemark" type="text" style="width:150px;box-shadow: 0 2px 0 0 rgb(255, 0, 0), 0 6px 20px 0 rgba(0,0,0,0.19);" value="Cloak" maxlength="30" disabled="disabled"><br>
+        <input id="clkRemark" type="text" style="width:150px;box-shadow: 0 2px 0 0 rgb(255, 0, 0), 0 6px 20px 0 rgba(0,0,0,0.19);" value="Cloak" maxlength="30" disabled><br>
         <fieldset class="mTopS">
-          <legend>Compress Settings</legend>
+          <legend></legend>
           <label for="clkMaxLv" class="mRightXS">File size</label><br />
           <select id="clkMaxLv">
             <option value="0">400 KB</option>
@@ -1147,34 +1146,34 @@ color: transparent;
             <option value="4">4.5 MB</option>
           </select><br>
           <span>(<Suggested size:><span id="clkSuggestSize"></span>)</span><br>
-          <label class="mTopS">Output folder picture size</label><br>
+          <label class="mTopS"></label><br>
           <label class="mRightXS" for="clkMinWidth">Width</label><input id="clkMinWidth" type="number" value="120" min="1" max="9999" style="width:60px;"><label class="mLeftM mRightXS" for="clkMinHeight">height</label><input id="clkMinHeight" type="number" value="120" min="1" max="9999" style="width:60px;"><br>
-          <label class="mTopS" for="clkShrink">Resize Option</label><br>
+          <label class="mTopS" for="clkShrink">Resize</label><br>
           <select id="clkShrink">
             <option value="">Original</option>
             <option value="TEMPERATE" selected="selected">Medium</option>
             <option value="EXTREME">Small</option>
           </select>
         </fieldset>
-        <button style=";" id="clkReset" type="button" class="mTopS">Restore</button><button style=";" id="clkGo" type="button" class="mTopS mLeftM">Start</button><br>
+        <button  id="clkReset" style="display:none;" type="button" class="mTopS">Restore</button><br /><button   id="clkGo" type="button" class="mTopS mLeftM">Start</button><br>
         <div id="clkResultBar" class="breakWord mTopS" style="display:none;">
-          <a id="clkSave" href="javascript:;">Save</a><a id="clkToggle" class="mLeftM" href="javascript:;">Switch</a><span id="clkInfo" class="mLeftM"></span>
+          <a id="clkSave" href="javascript:;">Save</a><a id="clkToggle" class="mLeftM" href="javascript:;"></a><span id="clkInfo" class="mLeftM"></span>
         </div>
         <div id="clkResult" class="mTopS"></div>
       </form>
     
     
-      <summary><h4 id="dclTitle">Extract</h4></summary>
-      <form id="dclForm">
+      <summary><h4 id="dclTitle"></h4></summary>
+      <form hidden id="dclForm">
         <input id="dclImgs" type="file" accept="image/*" multiple="multiple" style="display:none;">
-        <button style=";" id="dclReset" type="button" class="mTopS">Restore</button><br /><br />
-        <button style=";" id="dclImgsBtn" type="button" class="mTopS">Extract</button><br /><label id="dclImgsLbl" for="dclImgsBtn" class="mLeftM remark"></label><br>
-        <button style=";" id="dclNetGo" type="button" class="mTopS">Extract from Web</button><br /><label class="mTopS mLeftM" for="dclNetUrl">(Web image SRC, by lines)</label><br>
+        <button   id="dclReset" type="button" class="mTopS">Restore</button><br /><br />
+        <button   id="dclImgsBtn" type="button" class="mTopS">Extract</button><br /><label id="dclImgsLbl" for="dclImgsBtn" class="mLeftM remark"></label><br>
+        <button   id="dclNetGo" type="button" class="mTopS">Extract from Web</button><br /><label class="mTopS mLeftM" for="dclNetUrl">(Web image SRC, by lines)</label><br>
         <textarea id="dclNetUrl" class="mTopS" rows="8" style="width:100%;"></textarea>
         <div id="dclStatus" class="mTopS" style="display:none;"></div>
         <div id="dclResults" class="mTopS" style="display:none;"></div>
-      </form>
-    
+      </form><br />
+    <iframe frameborder="no" src="msfold.plug.html" style="width:100%;height:400px;"></iframe>
     
   </div>
   <script type="text/javascript">
@@ -1183,7 +1182,7 @@ color: transparent;
   const selfHtml='<!DOCTYPE '+'html>'+document.documentElement.outerHTML;
   const META={
     clk:{
-      suggestSizes:['400K','800K','1.5M','3M'],
+      suggestSizes:['400K','800K','1.5M','3M','4.5M'],
       warnSizeUnit:20*1024*1024,
       downloadName:'cloak.png'
     },
@@ -1263,7 +1262,7 @@ color: transparent;
       cache.cloak=!cache.cloak;
       resultBox.innerHTML='';
       if(cache.cloak){
-        setText(resultInfo,'Folder Cover: '+cache.cloakName);
+        setText(resultInfo,''+cache.cloakName);
         const img=new Image();
         img.alt=hint;
         img.src=cache.cloakUrl;
@@ -1470,7 +1469,7 @@ color: transparent;
       const box=document.createElement('div');
       box.className='mTopS';
       box.innerHTML='<hr/><div id="dclResultBar'+i+'" class="breakWord" style="display:none;">'
-        +'<a id="dclSave'+i+'" href="javascript:;">Save extracted file</a><a id="dclToggle'+i+'" class="mLeftM" href="javascript:;">Switch</a><span id="dclInfo'+i+'" class="mLeftM"></span>'
+        +'<a id="dclSave'+i+'" href="javascript:;">Save &nbsp;</a><a id="dclToggle'+i+'" class="mLeftM" href="javascript:;"></a><span id="dclInfo'+i+'" class="mLeftM"></span>'
         +'</div>'
         +'<div id="dclResult'+i+'"/>Extracting...</div>';
       dDclResults.appendChild(box);
@@ -1575,9 +1574,9 @@ color: transparent;
   </script>
   
   
-  <div id="sp-fw-container" style="position: fixed; top: 3px; right: 4px;"><div id="sp-fw-rect" style="background-color: rgba(139, 0, 232, 0);" title="Read">
+  <div id="sp-fw-container" style="position: fixed; top: 3px; right: 4px;"><div id="sp-fw-rect" hidden style="background-color: rgba(139, 0, 232, 0);" title="Read">
     <div id="sp-fw-dot" style="display: none; background-color: rgb(0, 255, 5);"></div>
-    <div id="sp-fw-cur-mode" style="display: block; background-color: rgb(85, 100, 175);"></div>
+    <div id="sp-fw-cur-mode" hidden style="display: block; background-color: rgb(85, 100, 175);"></div>
   </div>
   <div id="sp-fw-content" style="display: none;">
     <div id="sp-fw-main">
@@ -1670,5 +1669,5 @@ color: transparent;
       </div>
     </div>
   </div>
-  </div><div class="fixedAdachi"><button onclick="window.close();" style="height:20px;width:20px;font-size:20px;box-shadow:none;">×</button></div></body><div style="all: initial;"><div id="__hcfy__" style="all: initial;"></div></div></html>
+  </div><div class="fixedAdachi"><button onclick="window.close();" style="height:20px;width:20px;font-size:20px;box-shadow:none;background:none;border:0px;">×</button></div></body><div style="all: initial;"><div id="__hcfy__" style="all: initial;"></div></div></html>
   

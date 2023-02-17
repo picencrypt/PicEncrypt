@@ -281,21 +281,13 @@
        text-align:center;
       }
       button{ 
-       box-shadow: 0 2px 0 0 rgb(255, 0, 0), 0 6px 20px 0 rgba(0,0,0,0.19);
-      
-      border-radius:8px;
-      height:2.5rem;
-      width:10rem;
       font-size: 16px;
           outline:none;
+          height:33px;
+          width:40px;
       }
       button:hover{
-      background:#777;
-      border:1px solid rgb(85, 85, 85);
-      box-shadow: 0 2px 0 0 rgb(255, 0, 0), 0 6px 20px 0 rgba(0,0,0,0.19);
-      border-radius:8px;
-      height:2.5rem;
-      width:10rem;
+      background:#ff0000;
       font-size: 16px;
       outline:none;
       }
@@ -455,7 +447,7 @@
       div{
         background-color: #262626;
       }
-      button{background:#333;
+      button{background:#262626;
       color:#fff;
       border:0px solid rgb(64, 64, 64);}
       select{background:#333;
@@ -481,7 +473,7 @@
         background-color: #fff;
       }
       button{
-        border:1px solid rgb(172, 172, 172);
+        border:1px solid #fff;
       }
       select{
         border:1px solid rgb(172, 172, 172);
@@ -565,33 +557,38 @@ color: transparent;
     position: fixed;
     top: 5px;
     right: 5px;}
+    div.fixedKoito {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+width:30px;}
     div.fixedShimamura {
     position: fixed;
     top: 5px;
     left: 5px;}
+    div.embed {
+    position: fixed;
+    top: 30px;
+    left: 0px;
+height:100%;
+width:100%;}
   </style>
   <style></style>
 
 
 
-<div style="padding:0 16px;text-align:center";>
-   <div class="pathlink"style="-webkit-app-region:drag;height:30px;text-color:none;position:fixed;top:0px;left:0;width:95%;"></div> 
+<div style="padding:0 0px;text-align:center";>
+   <div class="pathlink"style="-webkit-app-region:drag;height:30px;text-color:none;position:fixed;top:0px;right:40px;width:75%;"></div> 
+   <div class="pathlink"style="-webkit-app-region:drag;position:fixed;top:5px;left:27px;">PicEncrypt</div> 
    <div class="fixedShimamura" ondragstart='return false'>
-</div>
-   
+  <img src="picencrypt.svg" style="width:16px;"> </div>
+  <div class="fixedKoito"><button onclick="window.close();" style="width:33px;font-size:20px;border:0px;">×</button></div>
+  <div class="embed">
+    <iframe src="main.html" frameborder=none style="height:100%;width:100%;"></iframe></div>
     <style>
-     .pathlink {font-size:15px;text-decoration:none;}
+     .pathlink {font-size:12px;text-decoration:none;}
    </style>
    <style>
       .pathref {color:#f00;font-size:18px;}
    </style>
-<br>
-<br>
-<button onclick="window.location.href='index.html'" style="width:10rem;height:10rem;font-size:50px;box-shadow: 0 2px 0 0 #43c66f, 0 6px 20px 0 rgba(0,0,0,0.19);">🔒</button>
-<nobr style="font-size:50px">&nbsp;</nobr>
-<button onclick="window.location.href='mshtml.html'"style="width:10rem;height:10rem;font-size:50px">📁</button>
-<br />
-<br />
-<button onclick="window.location.href='filechanger.html'"style="width:10rem;height:10rem;font-size:50px;box-shadow: 0 2px 0 0 #0f4f92, 0 6px 20px 0 rgba(0,0,0,0.19);">📄</button>
-<br />
-<br />
+  
