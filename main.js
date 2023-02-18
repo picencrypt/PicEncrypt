@@ -8,7 +8,6 @@ const createWindow = () => {
     title:"PicEncrypt",
     frame: false,
 resizable: false,
-transparent: true,
   })
   
   win.loadFile('app.html')
@@ -21,4 +20,4 @@ const electron = require('electron')
 
 const Menu = electron.Menu
 
-Menu.setApplicationMenu(null);
+Menu.setApplicationMenu(null)
