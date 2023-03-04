@@ -6,8 +6,7 @@ const createWindow = () => {
     height: 800,
     icon:'./build/icons/default.png',
     title:"PicEncrypt",
-    frame: false,
-resizable: false,
+icon: './icon/favicon.ico',
   })
   
   win.loadFile('app.html')

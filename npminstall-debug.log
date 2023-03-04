@@ -15,7 +15,7 @@
   cacheDir: null,
   env: {
     npm_config_registry: 'https://registry.npmmirror.com',
-    npm_config_argv: '{"remain":[],"cooked":["--fix-bug-versions","--china","--userconfig=C:\\\\Users\\\\27056\\\\.cnpmrc","--disturl=https://npmmirror.com/mirrors/node","--registry=https://registry.npmmirror.com","--save-dev","electron-prebuilt-compile"],"original":["--fix-bug-versions","--china","--userconfig=C:\\\\Users\\\\27056\\\\.cnpmrc","--disturl=https://npmmirror.com/mirrors/node","--registry=https://registry.npmmirror.com","--save-dev","electron-prebuilt-compile"]}',
+    npm_config_argv: '{"remain":[],"cooked":["--fix-bug-versions","--china","--userconfig=C:\\\\Users\\\\27056\\\\.cnpmrc","--disturl=https://npmmirror.com/mirrors/node","--registry=https://registry.npmmirror.com","electron-prebuilt-compile"],"original":["--fix-bug-versions","--china","--userconfig=C:\\\\Users\\\\27056\\\\.cnpmrc","--disturl=https://npmmirror.com/mirrors/node","--registry=https://registry.npmmirror.com","electron-prebuilt-compile"]}',
     npm_config_user_agent: 'npminstall/7.4.0 npm/? node/v19.4.0 win32 x64',
     NODE: 'C:\\Program Files\\nodejs\\node.exe',
     npm_node_execpath: 'C:\\Program Files\\nodejs\\node.exe',

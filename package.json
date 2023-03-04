@@ -4,23 +4,26 @@
   "description": "picture encrypt",
   "main": "main.js",
   "scripts": {
-    "start": "electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make"
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder -p always"
   },
   "devDependencies": {
-    "@electron-forge/cli": "^6.0.4",
+    "@electron-forge/cli": "^6.0.5",
     "@electron-forge/maker-deb": "^6.0.4",
     "@electron-forge/maker-rpm": "^6.0.4",
     "@electron-forge/maker-squirrel": "^6.0.4",
     "@electron-forge/maker-zip": "^6.0.4",
-    "electron": "^19.0.0",
-    "electron-prebuilt-compile": "^8.2.0"
+    "electron": "^23.1.1",
+    "electron-forge": "^5.2.4",
+    "electron-prebuilt-compile": "^8.2.0",
+    "electron-squirrel-startup": "^1.0.0",
+    "path": "^0.12.7"
   },
   "author": "PicEncrypt",
   "license": "GPL-3.0-or-later",
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.0",
+    
     "git": "^0.1.5"
   },
   "build": {
@@ -30,9 +33,17 @@
       "icon": "./icon/favicon.ico"
     },
     "win": {
+      "target": [
+        "msi",
+        "nsis",
+        "zip"
+      ],
       "icon": "./icon/favicon.png"
     },
     "linux": {
+      "icon": "./icon/favicon.ico"
+    },
+    "dmg": {
       "icon": "./icon/favicon.ico"
     },
     "nsis": {
@@ -41,9 +52,9 @@
       "perMachine": true,
       "allowElevation": true,
       "allowToChangeInstallationDirectory": true,
-      "installerIcon": "./favicon.ico",
-      "uninstallerIcon": "./favicon.ico",
-      "installerHeaderIcon": "./favicon.ico",
+      "installerIcon": "./icon/favicon.ico",
+      "uninstallerIcon": "./icon/favicon.ico",
+      "installerHeaderIcon": "./icon/favicon.ico",
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
       "shortcutName": "PicEncrypt"
