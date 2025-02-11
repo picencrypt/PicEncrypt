@@ -1,2 +1,2 @@
 ### [PicEncrypt](http://picencrypt.github.io)
- Go to [PicEncrypt](http://picencrypt.netlify.app)
+ Go to [PicEncrypt](http://picencrypt.netlify.app/main.html)
