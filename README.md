@@ -3,4 +3,4 @@
 PicEncrypt Toolkit Launching Page
 ## [Open PicEncrypt](https://picencrypt.netlify.app/main.html)
 
- ## [Desktop app](https://github.com/picencrypt/PicEncrypt/releases), link is shown in blue.
+ ## [Desktop app](https://github.com/picencrypt/PicEncrypt/releases)
